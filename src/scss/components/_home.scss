@@ -1,0 +1,14 @@
+.home{
+    height: 100vh;    
+    width: 75%;
+    // background: url("../img/pink.png") no-repeat;
+    // background-size: cover;
+    background: $dustygray;
+}
+
+h1{
+    font-family: $fontPlaza;
+    font-weight: $fontWeightBase;
+    color: $white;
+}
+

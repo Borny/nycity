@@ -1,0 +1,82 @@
+////////////////////////////////
+// BOX SIZING FOR ALL ELEMENTS
+////////////////////////////////
+
+* {
+  box-sizing: border-box;
+}
+
+// We're using "em" as font-size/margin/padding unit
+// It is set on the body font-size and varies depending on screen sizes
+html {
+  font-size: 100%;
+  min-height: 100%;
+}
+
+body {
+  height: 100%;
+  font-size: 0.8em;  
+  @media (min-width: $screen-xs) {
+    font-size: 0.9em;
+  }
+  @media (min-width: $screen-sm) {
+    font-size: 1em;
+  }
+}
+
+#root {
+    height: 100vh;
+}
+
+//////////
+// RESET
+//////////
+
+div,
+section,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li,
+a,
+label,
+button,
+input {
+  margin: 0;
+  padding: 0;
+  font-weight: $fontWeightBase;
+  font-family: $fontRoboto;
+}
+
+a {
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+li {
+  list-style: none;
+}
+
+// CANCELS OUTLINE INPUT
+input,
+button,
+select,
+textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
+// LINKS
+.links {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 0.3em;
+  border: 1px solid $black;
+  color: $black;
+}

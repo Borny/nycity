@@ -1,0 +1,14 @@
+////////////////
+// FONT FAMILY
+////////////////
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext');
+$fontRoboto: 'Roboto', Arial, sans-serif, serif, Helvetica;
+$fontPlaza: 'plaza';
+
+// ScorchedEarth
+@font-face {
+    font-family: $fontPlaza;
+    src: url('../fonts/plaza/PlazaITC-Normal.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
