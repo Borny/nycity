@@ -1,3 +1,13 @@
 .comments{
     width: 25%;
+    display: flex;
+    flex-flow: column nowrap;
+    .footer{
+        padding: 1em 0;
+        background: $skyblue;
+        display: flex;
+        justify-content: center;
+        margin-top: auto;
+    }
 }
+
