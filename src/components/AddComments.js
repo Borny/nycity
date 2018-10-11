@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import firebase from "../firebase.js";
+import firebase, { auth, provider } from "../firebase.js";
 
 class AddComments extends Component {
   constructor() {
     super();
     this.state = {
       username: "",
-      comment: ""
+      comment: "",
+      photo: "",
+      user: null
     };
   }
 
@@ -25,7 +27,9 @@ class AddComments extends Component {
       const messagesRef = firebase.database().ref("messages");
       const message = {
         comment: this.state.comment,
-        user: this.state.username
+        user: this.state.user.displayName,
+        photo: this.state.user.photoURL,
+        sentAt : Date.now()
       };
       messagesRef.push(message);
       this.setState({
@@ -34,30 +38,53 @@ class AddComments extends Component {
       });
     }
     e.preventDefault();
+
+  }
+
+  login() {
+    auth.signInWithPopup(provider).then(result => {
+      const user = result.user;
+      this.setState({
+        user
+      });
+    });
+  }
+
+  componentDidMount() {
+
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        this.setState({ user });
+      }
+    });
   }
 
   render() {
     return (
       <footer className="footer">
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <input
-            className="hidden"
-            type="text"
-            name="username"
-            ref="username"
-            onChange={this.handleChange.bind(this)}
-            value={this.state.username}
-          />
-          <input
-            type="text"
-            name="comment"
-            ref="comment"
-            placeholder="Say something!"
-            onChange={this.handleChange.bind(this)}
-            value={this.state.comment}
-          />
-          <button>submit</button>
-        </form>
+        {this.state.user ? (
+          <form onSubmit={this.handleSubmit.bind(this)}>
+            <input
+              className="hidden"
+              type="text"
+              name="username"
+              ref="username"
+              onChange={this.handleChange.bind(this)}
+              value={this.state.username}
+            />
+            <input
+              type="text"
+              name="comment"
+              ref="comment"
+              placeholder="Say something!"
+              onChange={this.handleChange.bind(this)}
+              value={this.state.comment}
+            />
+            <button>submit</button>
+          </form>
+        ) : (
+          <button onClick={this.login.bind(this)}>Log In</button>
+        )}
       </footer>
     );
   }

@@ -1,13 +1,57 @@
-.comments{
-    width: 25%;
+.comments {
+  width: 25%;
+  display: flex;
+  flex-flow: column nowrap;
+  background: $botticelli;
+  .footer {
+    padding: 1em 0;
+    background: $skyblue;
     display: flex;
-    flex-flow: column nowrap;
-    .footer{
-        padding: 1em 0;
-        background: $skyblue;
-        display: flex;
-        justify-content: center;
-        margin-top: auto;
-    }
+    justify-content: center;
+    margin-top: auto;
+  }
 }
 
+.message-list {
+  padding: 1em;
+}
+
+.message-block {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0 0 1em;
+}
+
+.message-photo {
+  width: 2em;
+  height: 2em;
+  border-radius: 2em;
+  background: $wildsand;
+  img {
+    width: 2em;
+    border-radius: 2em;
+  }
+}
+
+.message-data {
+  padding: 0 0 0 0.8em;
+  flex-basis: 100%;
+}
+
+.message-username {
+  font-size: 0.7em;
+}
+
+.message-comment {
+  position: relative;
+  background: $white;
+  border-radius: 0.2em;
+  padding: 0.3em 0.6em;
+}
+
+.message-comment-time {
+  position: absolute;
+  right: 4px;
+  bottom: 1px;
+  font-size: 0.55em;
+}
