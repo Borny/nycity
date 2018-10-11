@@ -34,7 +34,6 @@ class Comments extends Component {
       this.setState({
         messagesList: newState
       });
-      console.log(new Date(this.state.messagesList[9].sentAt))
       
     });
   }
