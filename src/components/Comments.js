@@ -6,10 +6,7 @@ class Comments extends Component {
   constructor() {
     super();
     this.state = {
-      username: "",
-      comment: "",
-      messagesList: [],
-      user: null
+      messagesList: []
     };
   }
 
@@ -19,7 +16,6 @@ class Comments extends Component {
     messagesRef.on("value", snapshot => {
       let messages = snapshot.val();
       let newState = [];
-      let sentAt;
       for (let message in messages) {
         newState.push({
           id: message,

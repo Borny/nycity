@@ -71,7 +71,9 @@ textarea {
   }
 }
 
+//////////
 // LINKS
+//////////
 .links {
   position: absolute;
   bottom: 10px;
@@ -80,8 +82,40 @@ textarea {
   border: 1px solid $black;
   color: $black;
 }
-
-// CLASSES
+ ///////////
+ // CLASSES
+ ///////////
 .hidden{
   display: none !important;
+}
+
+//////////
+// HACKS
+//////////
+
+//CANCELS SAFARI INPUT ICON
+input::-webkit-contacts-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
+input:focus::-webkit-contacts-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
+//CANCELS INTERNET EXPLORER AND EDGE CLEAR INPUT ICON
+input::-ms-clear {
+  display: none;
+}
+
+//CANCELS THE YELLOW BACKGROUND COLOR ON INPUT AUTOFILL ON CHROME
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
 }
