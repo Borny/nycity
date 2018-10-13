@@ -29,7 +29,7 @@ class AddComments extends Component {
         comment: this.state.comment,
         user: this.state.user.displayName,
         photo: this.state.user.photoURL,
-        sentAt : Date.now()
+        sentAt : firebase.database.ServerValue.TIMESTAMP
       };
       messagesRef.push(message);
       this.setState({
@@ -51,7 +51,6 @@ class AddComments extends Component {
   }
 
   componentDidMount() {
-
     auth.onAuthStateChanged(user => {
       if (user) {
         this.setState({ user });
@@ -62,7 +61,7 @@ class AddComments extends Component {
   render() {
     return (
       <footer className="footer">
-        {this.state.user ? (
+        {this.state.user ? ( // <= if user logged in display add comment
           <form onSubmit={this.handleSubmit.bind(this)}>
             <input
               className="hidden"
@@ -73,6 +72,7 @@ class AddComments extends Component {
               value={this.state.username}
             />
             <input
+            className="input-send"
               type="text"
               name="comment"
               ref="comment"
@@ -80,10 +80,12 @@ class AddComments extends Component {
               onChange={this.handleChange.bind(this)}
               value={this.state.comment}
             />
-            <button>submit</button>
+            <button className="btn btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path fill="#707070" d="M0 0v7.014L10 10 0 12.986V20l20-10z"/></svg>
+            </button>
           </form>
-        ) : (
-          <button onClick={this.login.bind(this)}>Log In</button>
+        ) : ( // <= else display login button
+          <button className="btn btn-primary" onClick={this.login.bind(this)}>Login with Google</button>
         )}
       </footer>
     );

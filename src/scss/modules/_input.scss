@@ -1,0 +1,7 @@
+.input-send{
+    font-style: italic;
+    height: 40px;
+    &:focus{
+        font-style: normal;
+    }
+}

@@ -1,0 +1,32 @@
+.btn{
+    border: none;
+    outline: none;
+    background: $gray;
+    cursor: pointer;
+    color: $white;
+}
+
+.btn-primary{
+    box-shadow: 0 2px 5px 2px $blackOpacity2;
+    border-radius: 40px;
+    padding: .8em 3em;
+    background: $tapestry;
+    font-weight: $fontWeightBold;
+    &:hover{
+        box-shadow: 0 2px 5px 2px $blackOpacity2;
+        background: lighten($tapestry,5%);
+    }
+    &:active{
+        box-shadow: 0 2px 5px 2px $blackOpacity2;
+        background: darken($tapestry, 10%);
+    }
+
+}
+
+.btn-secondary{
+    border-radius: 100%;
+    background: $white;
+    width: 40px;
+    height: 40px;
+    padding: .5em 0 0 .2em;
+}
