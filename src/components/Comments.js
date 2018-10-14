@@ -44,9 +44,9 @@ class Comments extends Component {
   render() {
     return (
       <div className="comments">
-        <header>
-          <h2>Comments</h2>
-          <button onClick={this.logout.bind(this)}>logout</button>
+        <header className="header">
+          <h2>Express yourself !!</h2>
+          <button className="btn btn-comment" onClick={this.logout.bind(this)}>logout</button>
         </header>
         <div className="message-list">
           <ul>

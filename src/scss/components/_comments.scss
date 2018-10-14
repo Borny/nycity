@@ -3,18 +3,37 @@
   display: flex;
   flex-flow: column nowrap;
   background: $botticelli;
+
+  .header {
+    h2 {
+      font-family: $fontPlaza;
+      font-weight: $fontWeightBase;
+      color: $dodgerblue;
+      font-size: 2.2em;
+    }
+  }
+
   .footer {
     padding: 1em 0;
     background: $kashmirblue;
     display: flex;
     justify-content: center;
     margin-top: auto;
+
+    .form-add {
+      width: 100%;
+      @include flexbox();
+      @include justify-content(space-between);
+      padding: 0 1em;
+    }
   }
 }
 
 .message-list {
   padding: 1em;
-}
+  flex: 1;
+  overflow-y: scroll;
+} 
 
 .message-block {
   display: flex;
@@ -27,6 +46,7 @@
   height: 2em;
   border-radius: 2em;
   background: $gray;
+
   img {
     width: 2em;
     border-radius: 2em;
@@ -36,6 +56,7 @@
 .message-data {
   padding: 0 0 0 0.8em;
   flex-basis: 100%;
+  color: $gray;
 }
 
 .message-username {
@@ -46,7 +67,7 @@
   position: relative;
   background: $white;
   border-radius: 0.2em;
-  padding: 0.3em 0.6em;
+  padding: 0.3em 1.5em .3em .6em;
 }
 
 .message-comment-time {

@@ -1,17 +1,25 @@
-.home{
-    height: 100vh;    
+.home {
+    height: 100vh;
     width: 75%;
     background: url("../img/pink.png") no-repeat;
     background-size: cover;
-    @media(min-width: $screen-sm){
+    @media(min-width: $screen-sm) {
         background: url("../img/new-york-manhattan.jpg") no-repeat;
         background-size: cover;
     }
+    .header {
+        @include flexbox();
+        @include flex-flow(row);
+        @include justify-content(space-between);
+        @include align-items(flex-start);
+        padding: 1em 2em 0;
+        width:100%;
+    }
 }
 
-h1{
+h1 {
     font-family: $fontPlaza;
     font-weight: $fontWeightBase;
     color: $white;
+    font-size: 3.5em;
 }
-
