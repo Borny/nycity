@@ -30,7 +30,15 @@ class Comments extends Component {
       this.setState({
         messagesList: newState
       });
+
+      // Scrolls the messages to the bottom at loading time
+      const block = document.querySelector(".message-list");
+      const scrollToBottom = () => {
+        block.scrollTop = block.scrollHeight;
+      };
+      scrollToBottom();
     });
+
   }
 
   logout() {
@@ -48,7 +56,7 @@ class Comments extends Component {
           <h2>Express yourself !!</h2>
           <button className="btn btn-comment" onClick={this.logout.bind(this)}>logout</button>
         </header>
-        <div className="message-list">
+        <div className="message-list" >
           <ul>
             {this.state.messagesList.map(message => {
               return (
