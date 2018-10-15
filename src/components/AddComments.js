@@ -38,10 +38,18 @@ class AddComments extends Component {
       });
     }
     e.preventDefault();
-
-
   }
 
+  // checking if the user is already logged in on page load
+  componentDidMount() {
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        this.setState({ user });
+      }
+    });
+  }
+  
+  // login duh!!!
   login() {
     auth.signInWithPopup(provider).then(result => {
       const user = result.user;
@@ -51,28 +59,9 @@ class AddComments extends Component {
     });
   }
 
-  componentDidMount() {
-    auth.onAuthStateChanged(user => {
-      if (user) {
-        this.setState({ user });
-      }
-    });
-  }
-
-
-  logout() {
-    auth.signOut().then(() => {
-      this.setState({
-        user: null
-      });
-    });
-  }
-  
   render() {
     return (
       <footer className="footer">
-          <button className="btn btn-comment" onClick={this.logout.bind(this)}>logout</button>
-
         {this.state.user ? ( // <= if user logged in display add comment
           <form className="form-add" onSubmit={this.handleSubmit.bind(this)}>
             <input

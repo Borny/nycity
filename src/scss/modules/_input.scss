@@ -1,5 +1,5 @@
 .input-send {
-    max-width: 260px;
+    max-width: 230px;
     width: 260px;
     height: 40px;
     border-radius: 20px;
@@ -7,6 +7,9 @@
     border: none;
     outline: none;
     padding: 0 .5em;
+    @media(min-width:$screen-lg){
+        max-width: 240px;
+    }
     &:focus {
         font-style: normal;
     }
