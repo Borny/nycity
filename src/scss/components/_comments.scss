@@ -1,14 +1,14 @@
 .comments {
 
+  @include flexbox();
+  @include flex-flow(column nowrap);
   width: 100%;
   min-width: 320px;
   position: absolute;
   top: 0;
   right: -100%;
   height: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  background: $botticelli;
+  background: $white;
   transition: right .4s ease-out;
   &.open{
     right: 0;
@@ -57,9 +57,29 @@
 }
 
 .message-block {
-  display: flex;
-  flex-flow: row nowrap;
+  @include flexbox();
+  @include flex-flow(row nowrap);
   margin: 0 0 1em;
+
+  &.admin{
+    @include flex-flow(row-reverse nowrap);
+    .message-data{
+      padding: 0 .5em 0 50px;
+      
+    }
+    .message-comment {
+      border-radius: 0.5em 0 0.5em 0.5em;
+      margin: 0 10px 0 0;
+      background: $kashmirblue;
+      color: $white;
+    }
+    svg {
+      left: initial;
+      right: -9px;
+      transform: rotateY(180deg);
+      fill: $kashmirblue;
+    }
+  }
 }
 
 .message-photo {
@@ -76,7 +96,7 @@
 
 .message-data {
   @include flex-basis(100%);
-  padding: 0 0 0 .5em;
+  padding: 0 50px 0 .5em;
   color: $gray;
 }
 
@@ -86,15 +106,17 @@
 
 .message-comment {
   position: relative;
-  background: $white;
+  background: $mercury;
   border-radius: 0 0.5em 0.5em 0.5em;
   margin: 0 0 0 10px;
   padding: 0.3em 1.5em .3em .6em;
-
+  color: $tundora;
+  
   svg {
     position: absolute;
     top: 0;
     left: -9px;
+    fill: $mercury;
   }
 }
 
