@@ -1,4 +1,6 @@
-.home {
+.blog {
+    @include flexbox();
+    @include flex-flow(column nowrap);
     width:100%;
     height: 100vh;
     background: url("../img/pink.png") no-repeat;
@@ -20,6 +22,7 @@
         @include align-items(flex-start);
         width:100%;
         padding: 1em 2em 0;
+        height: 140px;
     }
 }
 
@@ -27,8 +30,8 @@ h1 {
     font-family: $fontPlaza;
     font-weight: $fontWeightBase;
     color: $white;
-    font-size: 2.5em;
-    text-shadow: 1px 1px 8px #000;
+    font-size: 2em;
+    text-shadow: 1px 1px 8px $black;
     @media(min-width:$screen-sm){
         font-size: 5.5em;
     }
