@@ -26,6 +26,7 @@ class Comments extends Component {
           id: message,
           comment: messages[message].comment,
           user: messages[message].user,
+          firstName : messages[message].user.split(' ')[0],
           photo: messages[message].photo,
           sentAt: messages[message].sentAt,
           day: new Intl.DateTimeFormat('fr-FR', {year: 'numeric', month: 'short',day: '2-digit'}).format(messages[message].sentAt),
@@ -35,7 +36,8 @@ class Comments extends Component {
       this.setState({
         messagesList: newState
       });
-
+      
+      
       // Scrolls the messages list to the bottom of the container at loading time
       const block = document.querySelector(".message-list");
       const scrollToBottom = () => {
@@ -43,14 +45,12 @@ class Comments extends Component {
       };
       scrollToBottom();
     });
-
+    
+    console.log(this.state.messagesList.firstName)
     // checking if the user is already logged in on page load    
     auth.onAuthStateChanged(user => {
       if (user) {
         this.setState({ user });
-      }
-      if(user.displayName === 'Tristan Deloris'){
-        this.setState({userType : 'admin'})
       }
     });
 
@@ -102,7 +102,7 @@ class Comments extends Component {
                     <img src={message.photo} alt="" />
                   </div>
                   <div className="message-data">
-                    <p className="message-username">{message.user} - {message.day}</p>
+                    <p className="message-username">{message.firstName} - {message.day}</p>
                     <p className="message-comment">
                       <svg xmlns="http://www.w3.org/2000/svg" width="10" height="25"><path d="M0 0h10v25S8.797.031 0 0z"/></svg>
                       {message.comment}
