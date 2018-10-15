@@ -27,6 +27,9 @@ h1 {
     font-family: $fontPlaza;
     font-weight: $fontWeightBase;
     color: $white;
-    font-size: 3.5em;
+    font-size: 2.5em;
     text-shadow: 1px 1px 8px #000;
+    @media(min-width:$screen-sm){
+        font-size: 5.5em;
+    }
 }
