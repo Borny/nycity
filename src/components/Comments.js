@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import AddComments from "./AddComments";
-import firebase, { auth, provider } from "../firebase";
+import firebase, { auth } from "../firebase";
 
 class Comments extends Component {
   constructor() {
+
     super();
     this.state = {
       messagesList: []
@@ -13,6 +14,7 @@ class Comments extends Component {
   // getting the messages from firebase
   componentDidMount() {
     const messagesRef = firebase.database().ref("messages");
+
     messagesRef.on("value", snapshot => {
       let messages = snapshot.val();
       let newState = [];
@@ -38,7 +40,6 @@ class Comments extends Component {
       };
       scrollToBottom();
     });
-
   }
 
   logout() {
@@ -56,7 +57,7 @@ class Comments extends Component {
           <h2>Express yourself !!</h2>
           <button className="btn btn-comment" onClick={this.logout.bind(this)}>logout</button>
         </header>
-        <div className="message-list" >
+        <div className="message-list">
           <ul>
             {this.state.messagesList.map(message => {
               return (
@@ -67,6 +68,7 @@ class Comments extends Component {
                   <div className="message-data">
                     <p className="message-username">{message.user} - {message.day}</p>
                     <p className="message-comment">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="25"><path fill="#FFF" d="M0 0h10v25S8.797.031 0 0z"/></svg>
                       {message.comment}
                       <span className="message-comment-time">{message.time}</span>
                     </p>
@@ -76,7 +78,7 @@ class Comments extends Component {
             })}
           </ul>
         </div>
-        <AddComments />
+        <AddComments user={this.state.user}/>
       </div>
     );
   }

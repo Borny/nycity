@@ -39,6 +39,7 @@ class AddComments extends Component {
     }
     e.preventDefault();
 
+
   }
 
   login() {
@@ -58,9 +59,20 @@ class AddComments extends Component {
     });
   }
 
+
+  logout() {
+    auth.signOut().then(() => {
+      this.setState({
+        user: null
+      });
+    });
+  }
+  
   render() {
     return (
       <footer className="footer">
+          <button className="btn btn-comment" onClick={this.logout.bind(this)}>logout</button>
+
         {this.state.user ? ( // <= if user logged in display add comment
           <form className="form-add" onSubmit={this.handleSubmit.bind(this)}>
             <input
@@ -81,7 +93,7 @@ class AddComments extends Component {
               value={this.state.comment}
             />
             <button className="btn btn-secondary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path fill="#707070" d="M0 0v7.014L10 10 0 12.986V20l20-10z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path fill="#707070" d="M0 0v7.014L10 10 0 12.986V20l20-10z"/></svg>
             </button>
           </form>
         ) : ( // <= else display login button
