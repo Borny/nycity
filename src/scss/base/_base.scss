@@ -15,13 +15,7 @@ html {
 
 body {
   height: 100%;
-  font-size: 0.8em;  
-  @media (min-width: $screen-xs) {
-    font-size: 0.9em;
-  }
-  @media (min-width: $screen-sm) {
-    font-size: 1em;
-  }
+  font-size: 1em;
 }
 
 #root {

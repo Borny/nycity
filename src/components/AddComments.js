@@ -62,7 +62,7 @@ class AddComments extends Component {
   render() {
     return (
       <footer className="footer">
-        {this.state.user ? ( // <= if user logged in display add comment
+        {this.state.user && this.props.userState ? ( // <= if user logged in display add comment
           <form className="form-add" onSubmit={this.handleSubmit.bind(this)}>
             <input
               className="hidden"
