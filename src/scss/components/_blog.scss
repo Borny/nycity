@@ -21,8 +21,7 @@
         @include justify-content(space-between);
         @include align-items(flex-start);
         width:100%;
-        padding: 1em 2em 0;
-        height: 140px;
+        padding: 1em;
     }
 }
 
@@ -32,7 +31,32 @@ h1 {
     color: $white;
     font-size: 2em;
     text-shadow: 1px 1px 8px $black;
+    line-height: 1;
     @media(min-width:$screen-sm){
         font-size: 5.5em;
     }
+}
+
+.main{
+    position: relative;
+    width: 100%;
+    flex: 1 1;
+    overflow-x: hidden;
+    @media(min-width: $screen-sm){
+        width: calc( 100% + 20px );
+    }
+
+    // adding style to Article and Cards components when an article is open
+    &.open {
+        .article {
+          left: 0;
+          opacity: 1;
+          width: 100%;
+          height: 100%;
+        }
+        .cards {
+          right: -100%;
+          transition: right .6s ease-out;
+        }
+      }
 }

@@ -1,0 +1,35 @@
+.article {
+  position: absolute;
+  width: 100%;
+  top: 208px;
+  left: -100%;
+  min-height: 100%;
+  z-index: $zindex-article;
+  transition: left 0.4s ease-out;
+  @media(min-width: $screen-sm){
+    top: 208px;
+  }
+  &.show {
+    left: 0;
+  }
+
+  .header{
+    @include flexbox();
+    @include flex-flow(row nowrap); 
+    img {
+      width: 150px;
+      height: 130px;
+      border-radius: 8px;
+      border: 1px solid $white;
+    }
+  }
+}
+
+.article-content{
+  background: $whiteOpacity9;
+  @media(min-width:$screen-sm){
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 4px;
+  }
+}

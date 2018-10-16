@@ -36,6 +36,7 @@ class AddComments extends Component {
         comment: "",
         username: ""
       });
+
     }
     e.preventDefault();
   }

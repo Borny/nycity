@@ -1,6 +1,14 @@
 .cards{
     flex: 1 1;
-    overflow-y: scroll;
+    position: relative;
+    top: 0;
+    right: 0;
+    z-index: $zindex-cards;
+    transition: right .4s ease-out;
+    &.hide {
+        right: -100%;
+        transition: right .6s ease-out;
+    }
 }
 
 .card{
@@ -10,6 +18,7 @@
     border-top: 4px solid $white;
     padding: 1em;
     cursor: url("../img/statue-of-liberty.png"), auto;
+    
     img{
         width: 150px;
         height: 130px;

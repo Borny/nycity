@@ -1,11 +1,41 @@
 import React, { Component } from "react";
 import Cards from "./Cards";
+import Article from "./Article";
+
+import timesquare from "../img/timesquare.jpg";
+import statue from "../img/statue.jpeg";
+import central from "../img/central.jpg";
 
 class Blog extends Component {
-  render() {
+  constructor() {
+    super();
+    this.state = {
+      cardsHide: false,
+      articleShow: false
+    };
+  }
 
-    // sets a default class for the home component    
-    let blogClasses = "blog"; 
+  articlesToggleHandler = () => {
+    this.setState(prevState => {
+      return {
+        cardsHide: !prevState.cardsHide,
+        articleShow: !prevState.articleShow
+      };
+    });
+  };
+
+  render() {
+    const cards = [
+      [statue, "day one", "the new world"],
+      [timesquare, "day two", "blabla"],
+      [central, "day 3", "baldksfj"],
+      [statue, "day one", "the new world"],
+      [timesquare, "day two", "blabla"],
+      [central, "day 3", "baldksfj"]
+    ];
+
+    // sets a default class for the home component
+    let blogClasses = "blog";
     if (this.props.open) {
       blogClasses = "blog open";
     }
@@ -30,7 +60,18 @@ class Blog extends Component {
             </svg>
           </button>
         </header>
-        <Cards />
+        <main className="main">
+          <Article
+            cards={cards}
+            hideClick={this.articlesToggleHandler}
+            show={this.state.articleShow}
+            />
+          <Cards
+            cards={cards}
+            hideClick={this.articlesToggleHandler}
+            hide={this.state.cardsHide}
+          />
+        </main>
       </div>
     );
   }
