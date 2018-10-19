@@ -42,8 +42,10 @@
 
 .card-content{
     @media(min-width:$screen-sm){
-        background: $whiteOpacity5;
         width: 100%;
+        border-radius: 4px;
+        box-shadow: 0 2px 6px 2px $blackOpacity5;
+        background: $whiteOpacity5;
     }
     img{
         width: 150px;
