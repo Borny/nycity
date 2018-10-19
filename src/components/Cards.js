@@ -15,10 +15,12 @@ class Cards extends Component {
           {this.props.cards.map((card, index) => {
             return (
               <li className="card" key={index} onClick={this.props.hideClick}>
-                <img src={card[0]} alt="new york" />
-                <div className="card-text">
-                  <p>{card[1]}</p>
-                  <p>{card[2]}</p>
+                <div className="card-content">
+                  <img src={card[0]} alt="new york" />
+                  <div className="card-text">
+                    <p>{card[1]}</p>
+                    <p>{card[2]}</p>
+                  </div>
                 </div>
               </li>
             );

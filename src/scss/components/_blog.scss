@@ -1,6 +1,7 @@
 .blog {
     @include flexbox();
     @include flex-flow(column nowrap);
+    position: relative;
     width:100%;
     height: 100vh;
     background: url("../img/pink.png") no-repeat;

@@ -5,6 +5,15 @@
     right: 0;
     z-index: $zindex-cards;
     transition: right .4s ease-out;
+    ul{
+
+        @media(min-width:$screen-sm){
+            @include flexbox();
+            @include flex-flow(row wrap);
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
     &.hide {
         right: -100%;
         transition: right .6s ease-out;
@@ -18,14 +27,30 @@
     border-top: 4px solid $white;
     padding: 1em;
     cursor: url("../img/statue-of-liberty.png"), auto;
+    @media(min-width:$screen-sm){
+        background: none;
+        padding: 1em;
+        width: 50%;
+        border-top: none;
+    }
+    @media(min-width:$screen-md){
+        width: 33.3333333%;
+    }
     
+    
+}
+
+.card-content{
+    @media(min-width:$screen-sm){
+        background: $whiteOpacity5;
+        width: 100%;
+    }
     img{
         width: 150px;
         height: 130px;
         border-radius: 8px;
         border: 1px solid $white;
     }
-
 }
 
 .card-text{

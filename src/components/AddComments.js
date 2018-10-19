@@ -52,12 +52,14 @@ class AddComments extends Component {
   
   // login duh!!!
   login() {
-    auth.signInWithPopup(provider).then(result => {
+    auth.signInWithPopup(provider)
+    .then(result => {
       const user = result.user;
       this.setState({
         user
       });
-    });
+    })
+    .catch(console.log('Could not connect to Google'));
   }
 
   render() {

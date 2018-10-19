@@ -60,12 +60,12 @@ class Blog extends Component {
             </svg>
           </button>
         </header>
-        <main className="main">
-          <Article
+        <Article
             cards={cards}
             hideClick={this.articlesToggleHandler}
             show={this.state.articleShow}
             />
+        <main className="main">
           <Cards
             cards={cards}
             hideClick={this.articlesToggleHandler}
