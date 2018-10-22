@@ -36,8 +36,7 @@ class Comments extends Component {
       this.setState({
         messagesList: newState
       });
-      
-      
+
       // Scrolls the messages list to the bottom of the container at loading time
       const block = document.querySelector(".message-list");
       const scrollToBottom = () => {
@@ -45,9 +44,9 @@ class Comments extends Component {
       };
       scrollToBottom();
     });
-    
+
     console.log(this.state.messagesList.firstName)
-    // checking if the user is already logged in on page load    
+    // checking if the user is already logged in on page load
     auth.onAuthStateChanged(user => {
       if (user) {
         this.setState({ user });
@@ -90,12 +89,11 @@ class Comments extends Component {
           <ul>
             {this.state.messagesList.map(message => {
 
-              if(message.user === 'Tristan Deloris' || message.user === 'Jonathan Naeck'){
+              if(message.user === 'Tristan Deloris' || message.user === 'Jonathan Naeck'){
                   messageClasses = 'message-block admin'
               } else{
-                  messageClasses = 'message-block'                
+                  messageClasses = 'message-block'
               }
-              
               return (
                 <li className={messageClasses} key={message.id}>
                   <div className="message-photo">

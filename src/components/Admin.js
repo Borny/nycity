@@ -22,13 +22,12 @@ class Admin extends Component {
       title: "",
       dayNumber: ""
     });
-
     e.preventDefault();
   }
 
   handleChange(e){
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: [e.target.value]
     })
   }
 
@@ -47,20 +46,17 @@ class Admin extends Component {
 
   render() {
     return (
-      <div className="admin">
-        <h2>Admin page</h2>
-        {this.state.user &&
-        this.state.user.email === "tristan.deloris@gmail.com" ? (
+      <div className="admin_page">
+        {this.state.user && (this.state.user.email === "tristan.deloris@gmail.com" || this.state.user.email === "jon.naeck@gmail.com") ? (
           <form className="form-admin" onSubmit={this.handleSubmit.bind(this)}>
-            <input
+            {/* <input
               className="upload-admin"
               type="text"
               name="day-photo"
               ref="day-photo"
               value=""
               placeholder="Enter a photo"
-              
-            />
+            /> */}
             <button>Upload</button>
 
             <select className="" id="day_select">
@@ -82,7 +78,7 @@ class Admin extends Component {
               onChange={this.handleChange.bind(this)}
               value={this.state.title}
             />
-            
+
             <input
               className="select-admin"
               type="text"
@@ -93,11 +89,15 @@ class Admin extends Component {
               value={this.state.dayNumber}
             />
 
+            <textarea >
+
+            </textarea>
+
             <button className="btn btn-upload">Upload article</button>
           </form>
         ) : (
           <button className="btn btn-primary" onClick={this.login.bind(this)}>
-            Login with Google
+            Login
           </button>
         )}
       </div>
