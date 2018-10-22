@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import AddComments from "./AddComments";
 import firebase, { auth } from "../firebase";
 
-
 class Comments extends Component {
   constructor() {
 
@@ -97,7 +96,7 @@ class Comments extends Component {
               return (
                 <li className={messageClasses} key={message.id}>
                   <div className="message-photo">
-                    <img src={message.photo} alt="" />
+                    <img src={message.photo} alt={message.firstName} />
                   </div>
                   <div className="message-data">
                     <p className="message-username">{message.firstName} - {message.day}</p>

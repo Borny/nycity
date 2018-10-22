@@ -1,15 +1,18 @@
 import React, { Component } from "react";
 import firebase from "../firebase";
+import { storage } from "firebase";
 
 class Cards extends Component {
   constructor() {
     super();
     this.state = {
-      cards: []
+      cards: [],
+      image: ''
     };
   }
 
   componentDidMount() {
+    // Fetching the datas
     const cardsRef = firebase.database().ref("article_content");
 
     cardsRef.on("value", snapshot => {
@@ -28,6 +31,11 @@ class Cards extends Component {
         cards: newState
       });
     });
+
+    // Fetching the photos
+      const photoRef = firebase.storage().ref();
+      console.log(photoRef.child())
+
   }
 
   render() {
@@ -43,12 +51,10 @@ class Cards extends Component {
             return (
               <li className="card" key={index} onClick={this.props.hideClick}>
                 <div className="card-content">
-                  <img src={card[0]} alt="new york" />
+                  <img src={this.state.pink} alt="new york" />
                   <div className="card-text">
                     <p>{card.dayNumber}</p>
                     <p>{card.title}</p>
-                    <p>{card.summary}</p>
-                    <p>{card.dayStory}</p>
                   </div>
                 </div>
               </li>

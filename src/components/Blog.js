@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import Cards from "./Cards";
 import Article from "./Article";
 
-import timesquare from "../img/timesquare.jpg";
-import statue from "../img/statue.jpeg";
-import central from "../img/central.jpg";
-
 class Blog extends Component {
   constructor() {
     super();
@@ -25,14 +21,6 @@ class Blog extends Component {
   };
 
   render() {
-    // const cards = [
-    //   [statue, "day one", "the new world"],
-    //   [timesquare, "day two", "blabla"],
-    //   [central, "day 3", "baldksfj"],
-    //   [statue, "day one", "the new world"],
-    //   [timesquare, "day two", "blabla"],
-    //   [central, "day 3", "baldksfj"]
-    // ];
 
     // sets a default class for the home component
     let blogClasses = "blog";
