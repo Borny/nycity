@@ -20,11 +20,11 @@ class Article extends Component {
               />
             </svg>
           </button>
-          <img src={this.props.cards[0][0]} alt="new york" />
+          {/* <img src={this.props.cards[0][0]} alt="new york" /> */}
           <h2>
-            {this.props.cards[0][1]}
+            {/* {this.props.cards[0][1]} */}
             <br />
-            {this.props.cards[0][2]}
+            {/* {this.props.cards[0][2]} */}
           </h2>
         </header>
         <main>Blablabblablablabl</main>

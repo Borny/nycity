@@ -25,14 +25,14 @@ class Blog extends Component {
   };
 
   render() {
-    const cards = [
-      [statue, "day one", "the new world"],
-      [timesquare, "day two", "blabla"],
-      [central, "day 3", "baldksfj"],
-      [statue, "day one", "the new world"],
-      [timesquare, "day two", "blabla"],
-      [central, "day 3", "baldksfj"]
-    ];
+    // const cards = [
+    //   [statue, "day one", "the new world"],
+    //   [timesquare, "day two", "blabla"],
+    //   [central, "day 3", "baldksfj"],
+    //   [statue, "day one", "the new world"],
+    //   [timesquare, "day two", "blabla"],
+    //   [central, "day 3", "baldksfj"]
+    // ];
 
     // sets a default class for the home component
     let blogClasses = "blog";
@@ -61,13 +61,11 @@ class Blog extends Component {
           </button>
         </header>
         <Article
-            cards={cards}
             hideClick={this.articlesToggleHandler}
             show={this.state.articleShow}
             />
         <main className="main">
           <Cards
-            cards={cards}
             hideClick={this.articlesToggleHandler}
             hide={this.state.cardsHide}
           />

@@ -1,43 +1,41 @@
 import React, { Component } from "react";
-import firebase from '../firebase';
+import firebase from "../firebase";
 
 class Cards extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
-      cards : []
-    }
+      cards: []
+    };
   }
 
-componentDidMount(){
-  const cardsRef = firebase.database().ref("article_content");
+  componentDidMount() {
+    const cardsRef = firebase.database().ref("article_content");
 
-  cardsRef.on("value", snapshot => {
-    let cards = snapshot.val();
-    let newState = [];
-    for(let card in cards){
-      newState.push({
-        id: card,
-        title: cards[card].title,
-        dayNumber: cards[card].dayNumber
-      })
-    }
-    this.setState({
-      cards: newState
-    })
-    console.log(cards)
-  })
-
-}
+    cardsRef.on("value", snapshot => {
+      let cards = snapshot.val();
+      let newState = [];
+      for (let card in cards) {
+        newState.push({
+          id: card,
+          title: cards[card].title,
+          dayNumber: cards[card].dayNumber,
+          summary: cards[card].summary,
+          dayStory: cards[card].dayStory
+        });
+      }
+      this.setState({
+        cards: newState
+      });
+    });
+  }
 
   render() {
-
     // sets a default class for the cards component
     let cardsClasses = "cards";
     if (this.props.hide) {
       cardsClasses = "cards hide";
     }
-
     return (
       <div className={cardsClasses}>
         <ul>
@@ -49,6 +47,8 @@ componentDidMount(){
                   <div className="card-text">
                     <p>{card.dayNumber}</p>
                     <p>{card.title}</p>
+                    <p>{card.summary}</p>
+                    <p>{card.dayStory}</p>
                   </div>
                 </div>
               </li>
