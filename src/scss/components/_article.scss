@@ -1,21 +1,22 @@
 .article {
-  position: absolute;
+  position: fixed;
   width: 100%;
-  top: 208px;
+  top: 0;
   left: -100%;
   min-height: 100%;
   z-index: $zindex-article;
   transition: left 0.4s ease-out;
-  @media(min-width: $screen-sm){
+  
+  @media (min-width: $screen-sm) {
     top: 208px;
   }
   &.show {
     left: 0;
   }
 
-  .header{
+  .header {
     @include flexbox();
-    @include flex-flow(row nowrap); 
+    @include flex-flow(row nowrap);
     img {
       width: 150px;
       height: 130px;
@@ -25,11 +26,23 @@
   }
 }
 
-.article-content{
-  background: $whiteOpacity9;
-  @media(min-width:$screen-sm){
+.article-content {
+  background: $white;
+  overflow-y: scroll;
+  height: 100vh;
+  padding: 1em;
+  @media (min-width: $screen-sm) {
+    height: calc( 100vh - 220px);
     width: 70%;
     margin: 0 auto;
     border-radius: 4px;
+  }
+  header {
+    @include flexbox();
+    @include flex-flow(row nowrap);
+    @include justify-content(space-between);
+  }
+  main{
+    padding: 0 0 1em;
   }
 }

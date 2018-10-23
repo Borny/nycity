@@ -6,8 +6,6 @@ class Cards extends Component {
     super();
     this.state = {
       cards: [],
-      image: "",
-      pink: null,
       cardsUrls: ""
     };
   }
@@ -71,7 +69,6 @@ class Cards extends Component {
       .catch(err => {
         console.log(err);
       });
-
   }
 
   render() {
@@ -86,7 +83,7 @@ class Cards extends Component {
         <ul>
           {this.state.cards.map((card, index) => {
             return (
-              <li className="card" key={index} onClick={this.props.hideClick}>
+              <li className="card" key={index} id={index} onClick={this.props.hideClick}>
                 <div className="card-content">
                   <span className="post-it">{card.dayNumberArticle}</span>
 

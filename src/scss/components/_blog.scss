@@ -1,63 +1,68 @@
 .blog {
-    @include flexbox();
-    @include flex-flow(column nowrap);
-    position: relative;
-    width:100%;
-    height: 100vh;
-    background: url("../img/pink.png") no-repeat;
+  @include flexbox();
+  @include flex-flow(column nowrap);
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("../img/pink.png") no-repeat;
+  background-size: cover;
+  padding: 6em 0 0;
+  transition: width 0.4s ease-out;
+  overflow-x: hidden;
+  @media (min-width: $screen-sm) {
+    background: url("../img/new-york-manhattan.jpg") no-repeat;
     background-size: cover;
-    transition: width .4s ease-out;
-    @media(min-width: $screen-sm) {
-        background: url("../img/new-york-manhattan.jpg") no-repeat;
-        background-size: cover;
+    padding: 14em 0 0;
+  }
+  @media (min-width: $screen-lg) {
+    &.open {
+      width: 75%;
     }
-    @media(min-width: $screen-lg) {
-        &.open{
-            width: 75%
-        }
-    }
-    .header {
-        @include flexbox();
-        @include flex-flow(row);
-        @include justify-content(space-between);
-        @include align-items(flex-start);
-        width:100%;
-        padding: 1em;
-    }
+  }
+  .header {
+    @include flexbox();
+    @include flex-flow(row);
+    @include justify-content(space-between);
+    @include align-items(flex-start);
+    width: 100%;
+    padding: 1em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+  }
 }
 
 h1 {
-    font-family: $fontPlaza;
-    font-weight: $fontWeightBase;
-    color: $white;
-    font-size: 2em;
-    text-shadow: 1px 1px 8px $black;
-    line-height: 1;
-    @media(min-width:$screen-sm){
-        font-size: 5.5em;
-    }
+  font-family: $fontPlaza;
+  font-weight: $fontWeightBase;
+  color: $white;
+  font-size: 2em;
+  text-shadow: 1px 1px 8px $black;
+  line-height: 1;
+  @media (min-width: $screen-sm) {
+    font-size: 5.5em;
+  }
 }
 
-.main{
-    position: relative;
-    width: 100%;
-    flex: 1 1;
-    overflow-x: hidden;
-    @media(min-width: $screen-sm){
-        width: calc( 100% + 20px );
-    }
+.main {
+  position: relative;
+  width: 100%;
+  @media (min-width: $screen-sm) {
+    width: calc(100% + 20px);
+  }
 
-    // adding style to Article and Cards components when an article is open
-    &.open {
-        .article {
-          left: 0;
-          opacity: 1;
-          width: 100%;
-          height: 100%;
-        }
-        .cards {
-          right: -100%;
-          transition: right .6s ease-out;
-        }
-      }
+  // adding style to Article and Cards components when an article is open
+  &.open {
+    .article {
+      left: 0;
+      opacity: 1;
+      width: 100%;
+      height: 100%;
+    }
+    .cards {
+      right: -100%;
+      transition: right 0.6s ease-out;
+    }
+  }
 }
