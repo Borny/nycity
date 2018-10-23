@@ -44,7 +44,6 @@ class Comments extends Component {
       scrollToBottom();
     });
 
-    console.log(this.state.messagesList.firstName)
     // checking if the user is already logged in on page load
     auth.onAuthStateChanged(user => {
       if (user) {

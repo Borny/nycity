@@ -128,12 +128,12 @@ class Admin extends Component {
                   ref="selectDay"
                 >
                   <option value="">Select a day</option>
-                  <option value="day one">Day one</option>
-                  <option value="day two">Day two</option>
-                  <option value="day three">Day three</option>
-                  <option value="day four">Day four</option>
-                  <option value="day five">Day five</option>
-                  <option value="day six">Day six</option>
+                  <option value="dayOne">Day one</option>
+                  <option value="dayTwo">Day two</option>
+                  <option value="dayThree">Day three</option>
+                  <option value="dayFour">Day four</option>
+                  <option value="dayFive">Day five</option>
+                  <option value="daySix">Day six</option>
                 </select>
               </label>
 

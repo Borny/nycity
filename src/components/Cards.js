@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import firebase from "../firebase";
-import { storage } from "firebase";
 
 class Cards extends Component {
   constructor() {
     super();
     this.state = {
       cards: [],
-      image: ''
+      image: '',
+      pink: null
     };
   }
 
@@ -33,8 +33,16 @@ class Cards extends Component {
     });
 
     // Fetching the photos
-      const photoRef = firebase.storage().ref();
-      console.log(photoRef.child())
+      var storage = firebase.storage();
+      var storageRef = storage.ref();
+
+      console.log(storageRef)
+      storageRef.child(`photos/dayOne/central.jpg`).getDownloadURL().then((url)=>{
+        console.log(url)
+        this.setState({
+          pink : url
+        })
+      })
 
   }
 
