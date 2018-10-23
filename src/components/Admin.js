@@ -25,78 +25,7 @@ class Admin extends Component {
     });
   }
 
-  handleSubmit(e) { 
-    if ((this.refs.title.value === "") || (this.refs.summary.value === "") || (this.refs.dayStory.value === "")){
-      alert("you cannot publish nothing");
-    } else {
-      const articleRef = firebase.database().ref("article_content");
-      const article = {
-        title: this.state.title,
-        dayNumberPhoto: this.state.dayNumberPhoto,
-        summary: this.state.summary,
-        dayStory: this.state.dayStory
-      };
-      articleRef.push(article);
-      this.setState({
-        title: "",
-        dayNumberPhoto: "",
-        summary: "",
-        dayStory: ""
-      });
-    }
-    e.preventDefault();
-  }
-
-  fileSelectedHandler(e) {
-    this.setState({
-      selectedFile: e.target.files,
-      dayNumberArticle: this.state.dayNumberArticle
-    });
-  }
-
-  handleUpload(e) {
-
-    if(this.refs.selectDay.value === ""){
-      alert('choose a fucking day you dumbass!!!!')
-    } else {
-
-      const selected = this.state.selectedFile;
-      for(let i = 0; i < selected.length; i++){
-        const storageRef = storage().ref(
-          `photos/${this.state.dayNumber}/${selected[i].name}`
-        );
-        storageRef.put(selected[i]);
-      }
-            
-    }
-
-    e.preventDefault();
-  }
-
-  handleChange(e) {
-    this.setState({
-      [e.target.name]: [e.target.value]
-    });
-  }
-
-  handleSelectChange(e) {
-    this.setState({
-      dayNumber: [e.target.value]
-    });
-  }
-
-  handleTextareaChange(e) {
-    this.setState({
-      summary: [e.target.value]
-    });
-  }
-
-  handleTextareaDayStoryChange(e) {
-    this.setState({
-      dayStory: [e.target.value]
-    });
-  }
-
+  // login !!!
   login() {
     auth
       .signInWithPopup(provider)
@@ -109,6 +38,103 @@ class Admin extends Component {
       .catch(console.log("Could not connect to Google"));
   }
 
+  // selecting one or more photos to upload
+  fileSelectedHandler(e) {
+    this.setState({
+      selectedFile: e.target.files,
+      dayNumberPhoto: this.state.dayNumberPhoto
+    });
+  }
+
+  // Selecting a day for the photo upload
+  handlePhotoSelectChange(e) {
+    this.setState({
+      dayNumberArticle: [e.target.value]
+    });
+  }
+
+  // uploading the photos
+  handleUpload(e) {
+    if (this.refs.selectDay.value === "") {
+      alert("choose a fucking day you dumbass!!!!");
+    } else {
+      const selected = this.state.selectedFile;
+      for (let i = 0; i < selected.length; i++) {
+        const storageRef = storage().ref(
+          `photos/${this.state.dayNumberPhoto}/${selected[i].name}`
+        );
+        const task = storageRef.put(selected[i]);
+
+        task.on(
+          "state_changed",
+          function progress() {},
+          function error(err) {},
+          function complete() {
+            console.log("completed");
+          }
+        );
+      }
+    }
+
+    e.preventDefault();
+  }
+
+  // uploading text to the firebase realTime database
+  handleSubmit(e) {
+    if (
+      this.refs.dayNumberArticle.value === "" ||
+      this.refs.title.value === "" ||
+      this.refs.summary.value === "" ||
+      this.refs.dayStory.value === ""
+    ) {
+      alert("you cannot publish nothing");
+    } else {
+      const articleRef = firebase.database().ref("article_content");
+      const article = {
+        title: this.state.title,
+        dayNumberArticle: this.state.dayNumberArticle,
+        summary: this.state.summary,
+        dayStory: this.state.dayStory
+      };
+      articleRef.push(article);
+      this.setState({
+        title: "",
+        dayNumberArticle: "",
+        summary: "",
+        dayStory: ""
+      });
+    }
+    e.preventDefault();
+  }
+
+  // handling the change on the day title
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: [e.target.value]
+    });
+  }
+
+  // handling day select for the data
+  handleSelectChange(e) {
+    this.setState({
+      dayNumberPhoto: [e.target.value]
+    });
+  }
+
+  // handling textarea summary change
+  handleTextareaChange(e) {
+    this.setState({
+      summary: [e.target.value]
+    });
+  }
+
+  // handling textarea day story change
+  handleTextareaDayStoryChange(e) {
+    this.setState({
+      dayStory: [e.target.value]
+    });
+  }
+
   render() {
     return (
       <div className="admin_page">
@@ -116,9 +142,10 @@ class Admin extends Component {
         (this.state.user.email === "tristan.deloris@gmail.com" ||
           this.state.user.email === "jon.naeck@gmail.com") ? (
           <div>
-
             {/* uploading the pictures */}
             <div className="upload-form">
+              <h2>Upload articles images</h2>
+
               <label className="label-admin">
                 Day number
                 <select
@@ -138,6 +165,7 @@ class Admin extends Component {
               </label>
 
               <label className="admin-upload-picture">
+                {/* Pick a file input */}
                 <input
                   className="hidden"
                   type="file"
@@ -145,13 +173,17 @@ class Admin extends Component {
                   ref={fileInput => (this.fileInput = fileInput)}
                   multiple
                 />
+
+                {/* Fake Pick a file button */}
                 <button
                   onClick={() => this.fileInput.click()}
                   className="btn btn-tertiary"
-                  ref='pickfile'
+                  ref="pickfile"
                 >
                   Pick file
                 </button>
+
+                {/* Upload image button */}
                 <button
                   onClick={this.handleUpload.bind(this)}
                   className="btn btn-warning"
@@ -166,12 +198,16 @@ class Admin extends Component {
               className="form-admin"
               onSubmit={this.handleSubmit.bind(this)}
             >
+              <h2>Upload text</h2>
+
+              {/* Selecting the day */}
               <label className="label-admin">
                 Day number
                 <select
                   className="select-admin"
                   value={this.state.value}
-                  onChange={this.handleSelectChange.bind(this)}
+                  onChange={this.handlePhotoSelectChange.bind(this)}
+                  ref="dayNumberArticle"
                 >
                   <option value="">Select a day</option>
                   <option value="day one">Day one</option>
@@ -183,6 +219,7 @@ class Admin extends Component {
                 </select>
               </label>
 
+              {/* Defining the article title */}
               <label className="label-admin">
                 Article title
                 <input
@@ -195,6 +232,8 @@ class Admin extends Component {
                   value={this.state.title}
                 />
               </label>
+
+              {/* Defining the article summary */}
               <label className="label-admin">
                 Enter a summary
                 <textarea
@@ -207,6 +246,7 @@ class Admin extends Component {
                 />
               </label>
 
+              {/* Describing the day */}
               <label className="label-admin">
                 Write what happened today
                 <textarea
@@ -219,10 +259,12 @@ class Admin extends Component {
                 />
               </label>
 
+              {/* Uploading the data */}
               <button className="btn btn-warning">Upload article</button>
             </form>
           </div>
         ) : (
+          /* Logout button */
           <button className="btn btn-tertiary" onClick={this.login.bind(this)}>
             Login
           </button>

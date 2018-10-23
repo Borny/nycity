@@ -6,8 +6,9 @@ class Cards extends Component {
     super();
     this.state = {
       cards: [],
-      image: '',
-      pink: null
+      image: "",
+      pink: null,
+      cardsUrls: ""
     };
   }
 
@@ -22,7 +23,7 @@ class Cards extends Component {
         newState.push({
           id: card,
           title: cards[card].title,
-          dayNumber: cards[card].dayNumber,
+          dayNumberArticle: cards[card].dayNumberArticle,
           summary: cards[card].summary,
           dayStory: cards[card].dayStory
         });
@@ -32,17 +33,44 @@ class Cards extends Component {
       });
     });
 
-    // Fetching the photos
-      var storage = firebase.storage();
-      var storageRef = storage.ref();
+    // Fetching the pictures
+    const photos = {
+      cardOne: "dayOne",
+      cardTwo: "dayTwo",
+      cardThree: "dayThree",
+      cardFour: "dayFour",
+      cardFive: "dayFive",
+      cardSix: "daySix"
+    };
 
-      console.log(storageRef)
-      storageRef.child(`photos/dayOne/central.jpg`).getDownloadURL().then((url)=>{
-        console.log(url)
-        this.setState({
-          pink : url
+    const promises = [];
+    for (let photo in photos) {
+      const promise = firebase
+        .storage()
+        .ref()
+        .child(`photos/${photos[photo]}/${photo}.jpg`)
+        .getDownloadURL()
+        .then(url => {
+          return url;
         })
+        .catch(err => {});
+      promises.push(promise);
+    }
+
+    const promisesUrls = [];
+    Promise.all(promises)
+      .then(urls => {
+        urls.map(url => {
+          promisesUrls.push(url);
+          // updating
+          this.setState({
+            cardsUrls: promisesUrls
+          });
+        });
       })
+      .catch(err => {
+        console.log(err);
+      });
 
   }
 
@@ -52,6 +80,7 @@ class Cards extends Component {
     if (this.props.hide) {
       cardsClasses = "cards hide";
     }
+
     return (
       <div className={cardsClasses}>
         <ul>
@@ -59,9 +88,11 @@ class Cards extends Component {
             return (
               <li className="card" key={index} onClick={this.props.hideClick}>
                 <div className="card-content">
-                  <img src={this.state.pink} alt="new york" />
+                  <span className="post-it">{card.dayNumberArticle}</span>
+
+                  <img src={this.state.cardsUrls[index]} alt="new york" />
+
                   <div className="card-text">
-                    <p>{card.dayNumber}</p>
                     <p>{card.title}</p>
                   </div>
                 </div>

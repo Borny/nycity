@@ -26,6 +26,7 @@ class Comments extends Component {
           comment: messages[message].comment,
           user: messages[message].user,
           firstName : messages[message].user.split(' ')[0],
+          firstLetter : messages[message].user.split(' ')[0].charAt(0),
           photo: messages[message].photo,
           sentAt: messages[message].sentAt,
           day: new Intl.DateTimeFormat('fr-FR', {year: 'numeric', month: 'short',day: '2-digit'}).format(messages[message].sentAt),
@@ -95,7 +96,7 @@ class Comments extends Component {
               return (
                 <li className={messageClasses} key={message.id}>
                   <div className="message-photo">
-                    <img src={message.photo} alt={message.firstName} />
+                    <img src={message.photo} alt={message.firstLetter} />
                   </div>
                   <div className="message-data">
                     <p className="message-username">{message.firstName} - {message.day}</p>
