@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import firebase from "../firebase";
 
+import Lightbox from 'lightbox-react';
+import 'lightbox-react/style.css'; // This only needs to be imported once in your app
+
+
 import img1 from "./../img/dayOne/imgOne.jpg";
 import img2 from "./../img/dayOne/imgTwo.jpg";
 import img3 from "./../img/dayOne/imgThree.jpg";
@@ -8,10 +12,26 @@ import img4 from "./../img/dayOne/imgFour.jpg";
 import img5 from "./../img/dayOne/imgFive.jpg";
 import img6 from "./../img/dayOne/imgSix.jpg";
 
+const images = [
+
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6
+];
+
+
 class Article extends Component {
-  constructor() {
-    super();
+
+
+  constructor(props) {
+    super(props);
+
     this.state = {
+      photoIndex: 0,
+      isOpen: false,
       cards: [],
       cardsUrls: ""
     };
@@ -85,8 +105,37 @@ class Article extends Component {
       articleClasses = "article show";
     }
 
+
+    const { photoIndex, isOpen } = this.state;
+
     return (
+
+      
+
+
       <div className={articleClasses}>
+
+
+      {isOpen && (
+        <Lightbox
+          mainSrc={images[photoIndex]}
+          nextSrc={images[(photoIndex + 1) % images.length]}
+          prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+          onCloseRequest={() => this.setState({ isOpen: false })}
+          onMovePrevRequest={() =>
+            this.setState({
+              photoIndex: (photoIndex + images.length - 1) % images.length,
+            })
+          }
+          onMoveNextRequest={() =>
+            this.setState({
+              photoIndex: (photoIndex + 1) % images.length,
+            })
+          }
+        />
+      )}
+
+
         {this.state.cards.map((card, index) => {
           let article = "article-content";
           if (
@@ -127,22 +176,22 @@ class Article extends Component {
                 <p>{card.dayStory}</p>
                 <div className="img-container">
                   <div>
-                    <img src={img1} alt={img1} />
+                    <img src={img1} alt={img1} onClick={() => this.setState({ isOpen: true })} />
                   </div>
                   <div>
-                    <img src={img2} alt={img2} />
+                    <img src={img2} alt={img2} onClick={() => this.setState({ isOpen: true })} />
                   </div>
                   <div>
-                    <img src={img3} alt={img3} />
+                    <img src={img3} alt={img3} onClick={() => this.setState({ isOpen: true })} />
                   </div>
                   <div>
-                    <img src={img4} alt={img4} />
+                    <img src={img4} alt={img4} onClick={() => this.setState({ isOpen: true })} />
                   </div>
                   <div>
-                    <img src={img5} alt={img5} />
+                    <img src={img5} alt={img5} onClick={() => this.setState({ isOpen: true })} />
                   </div>
                   <div>
-                    <img src={img6} alt={img6} />
+                    <img src={img6} alt={img6} onClick={() => this.setState({ isOpen: true })} />
                   </div>
                 </div>
               </main>

@@ -124,6 +124,7 @@ class Blog extends Component {
             </svg>
           </button>
         </header>
+
         <Article
           hideClick={this.closeArticleHandler}
           show={this.state.articleShow}
