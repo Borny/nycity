@@ -113,7 +113,7 @@ class Blog extends Component {
             October 2018
           </h1>
           <button
-            className="btn btn-comment"
+            className="btn btn-tertiary btn-comment"
             onClick={this.props.commentClickHandler}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25">

@@ -29,14 +29,13 @@ class AddComments extends Component {
         comment: this.state.comment,
         user: this.state.user.displayName,
         photo: this.state.user.photoURL,
-        sentAt : firebase.database.ServerValue.TIMESTAMP
+        sentAt: firebase.database.ServerValue.TIMESTAMP
       };
       messagesRef.push(message);
       this.setState({
         comment: "",
         username: ""
       });
-
     }
     e.preventDefault();
   }
@@ -51,14 +50,15 @@ class AddComments extends Component {
   }
   // login duh!!!
   login() {
-    auth.signInWithPopup(provider)
-    .then(result => {
-      const user = result.user;
-      this.setState({
-        user
-      });
-    })
-    .catch(console.log('Could not connect to Google'));
+    auth
+      .signInWithPopup(provider)
+      .then(result => {
+        const user = result.user;
+        this.setState({
+          user
+        });
+      })
+      .catch(console.log("Could not connect to Google"));
   }
 
   render() {
@@ -75,7 +75,7 @@ class AddComments extends Component {
               value={this.state.username}
             />
             <input
-            className="input-send"
+              className="input-send"
               type="text"
               name="comment"
               ref="comment"
@@ -84,11 +84,16 @@ class AddComments extends Component {
               value={this.state.comment}
             />
             <button className="btn btn-secondary">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path fill="#707070" d="M0 0v7.014L10 10 0 12.986V20l20-10z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                <path d="M0 0v7.014L10 10 0 12.986V20l20-10z" />
+              </svg>
             </button>
           </form>
-        ) : ( // <= else display login button
-          <button className="btn btn-primary" onClick={this.login.bind(this)}>Login with Google</button>
+        ) : (
+          // <= else display login button
+          <button className="btn btn-primary" onClick={this.login.bind(this)}>
+            Login with Google
+          </button>
         )}
       </footer>
     );

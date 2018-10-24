@@ -177,7 +177,7 @@ class Admin extends Component {
                 {/* Fake Pick a file button */}
                 <button
                   onClick={() => this.fileInput.click()}
-                  className="btn btn-tertiary"
+                  className="btn btn-go"
                   ref="pickfile"
                 >
                   Pick file

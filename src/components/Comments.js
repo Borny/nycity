@@ -4,7 +4,6 @@ import firebase, { auth } from "../firebase";
 
 class Comments extends Component {
   constructor() {
-
     super();
     this.state = {
       messagesList: [],
@@ -25,12 +24,19 @@ class Comments extends Component {
           id: message,
           comment: messages[message].comment,
           user: messages[message].user,
-          firstName : messages[message].user.split(' ')[0],
-          firstLetter : messages[message].user.split(' ')[0].charAt(0),
+          firstName: messages[message].user.split(" ")[0],
+          firstLetter: messages[message].user.split(" ")[0].charAt(0),
           photo: messages[message].photo,
           sentAt: messages[message].sentAt,
-          day: new Intl.DateTimeFormat('fr-FR', {year: 'numeric', month: 'short',day: '2-digit'}).format(messages[message].sentAt),
-          time: new Intl.DateTimeFormat('fr-FR', {hour: '2-digit', minute: '2-digit'}).format(messages[message].sentAt)
+          day: new Intl.DateTimeFormat("fr-FR", {
+            year: "numeric",
+            month: "short",
+            day: "2-digit"
+          }).format(messages[message].sentAt),
+          time: new Intl.DateTimeFormat("fr-FR", {
+            hour: "2-digit",
+            minute: "2-digit"
+          }).format(messages[message].sentAt)
         });
       }
       this.setState({
@@ -51,7 +57,6 @@ class Comments extends Component {
         this.setState({ user });
       }
     });
-
   }
 
   // logout
@@ -64,34 +69,62 @@ class Comments extends Component {
   }
 
   render() {
-
     // defining classes for the comments block
-    let commentsClasses = 'comments';
-    if(this.props.open){
-      commentsClasses = 'comments open';
+    let commentsClasses = "comments";
+    if (this.props.open) {
+      commentsClasses = "comments open";
     }
 
     // defining classes for the message block
-    let messageClasses = 'message-block';
+    let messageClasses = "message-block";
 
     return (
       <div className={commentsClasses}>
         <header className="header">
-
-          <button className="btn btn-close" onClick={this.props.close}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="19.607"><path fill="#FFF" d="M31.998 9.782L32 9.768l-.001-.007c0-.084-.017-.167-.025-.25-.008-.075-.008-.149-.022-.224l-.002-.018c-.017-.087-.05-.167-.076-.25-.022-.07-.037-.144-.065-.212-.034-.083-.082-.157-.125-.234-.035-.065-.064-.133-.104-.194l-.008-.01c-.009-.012-.02-.022-.027-.034-.03-.038-.062-.074-.091-.112-.06-.074-.114-.152-.183-.221l-.01-.008c-.025-.025-.057-.044-.083-.069-.008-.007-.017-.013-.024-.021l-.012-.009a2.603 2.603 0 0 0-.316-.24 2.414 2.414 0 0 0-.367-.197L12.9.191a2.5 2.5 0 0 0-3.267 1.354c-.528 1.275.078 2.987 1.355 3.516l5.937 2.707H2.5a2.5 2.5 0 1 0 0 5h14.421l-5.937 2.207c-1.274.528-1.881 1.866-1.353 3.142.527 1.275 1.99 1.818 3.265 1.291l17.557-7.298c.002-.001.003-.018.005-.018l.001-.009c.099-.041.189-.1.281-.153.049-.027.101-.05.146-.081l.005-.005c.041-.027.074-.063.112-.092l.093-.075c.055-.046.114-.086.166-.137l.009-.01c.043-.044.077-.095.117-.142.035-.044.073-.085.107-.131.024-.031.053-.058.075-.09.003-.005.005-.011.009-.016.049-.074.084-.154.124-.232.034-.065.075-.125.104-.193l.002-.003c.01-.023.013-.047.021-.07.025-.068.042-.14.063-.21.017-.062.042-.12.055-.183l.002-.008c.021-.108.026-.217.033-.327.004-.047.015-.094.015-.143z"/></svg>
+          <button className="btn btn-tertiary btn-close" onClick={this.props.close}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="17.107"
+              height="22.589"
+            >
+              <path
+                d="M16.254 9.539L3.147.362A2 2 0 1 0 .853 3.639l10.934 7.656L.854 18.95a2.001 2.001 0 0 0 2.295 3.276l13.105-9.177a1.99 1.99 0 0 0 .844-1.755 1.992 1.992 0 0 0-.844-1.755z"
+              />
+            </svg>
           </button>
           <h2>Express yourself !</h2>
-          <button className="btn btn-comment" onClick={this.logout.bind(this)}>logout</button>
+          <button className="btn btn-tertiary btn-logout" onClick={this.logout.bind(this)}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 26.85">
+              <defs />
+              <g id="logout" transform="translate(-305 -95)">
+                <path
+                  id="Soustraction_2"
+                  data-name="Soustraction 2"
+                  d="M-743-15.15a11.753 11.753 0 0 1-8.485-3.617A12.452 12.452 0 0 1-755-27.5a12.454 12.454 0 0 1 3.515-8.733A11.85 11.85 0 0 1-747-39.15v2.669a9.94 9.94 0 0 0-5.6 8.981 9.754 9.754 0 0 0 9.6 9.88 9.754 9.754 0 0 0 9.6-9.88 9.94 9.94 0 0 0-5.6-8.981v-2.669a11.85 11.85 0 0 1 4.486 2.918A12.453 12.453 0 0 1-731-27.5a12.451 12.451 0 0 1-3.514 8.732A11.753 11.753 0 0 1-743-15.15z"
+                  transform="translate(1060 137)"
+                />
+                <rect
+                  id="Rectangle_26"
+                  data-name="Rectangle 26"
+                  width="2"
+                  height="10"
+                  rx="1"
+                  transform="translate(316 95)"
+                />
+              </g>
+            </svg>
+          </button>
         </header>
         <div className="message-list">
           <ul>
             {this.state.messagesList.map(message => {
-
-              if(message.user === 'Tristan Deloris' || message.user === 'Jonathan Naeck'){
-                  messageClasses = 'message-block admin'
-              } else{
-                  messageClasses = 'message-block'
+              if (
+                message.user === "Tristan Deloris" ||
+                message.user === "Jonathan Naeck"
+              ) {
+                messageClasses = "message-block admin";
+              } else {
+                messageClasses = "message-block";
               }
               return (
                 <li className={messageClasses} key={message.id}>
@@ -99,11 +132,21 @@ class Comments extends Component {
                     <img src={message.photo} alt={message.firstLetter} />
                   </div>
                   <div className="message-data">
-                    <p className="message-username">{message.firstName} - {message.day}</p>
+                    <p className="message-username">
+                      {message.firstName} - {message.day}
+                    </p>
                     <p className="message-comment">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="25"><path d="M0 0h10v25S8.797.031 0 0z"/></svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="10"
+                        height="25"
+                      >
+                        <path d="M0 0h10v25S8.797.031 0 0z" />
+                      </svg>
                       {message.comment}
-                      <span className="message-comment-time">{message.time}</span>
+                      <span className="message-comment-time">
+                        {message.time}
+                      </span>
                     </p>
                   </div>
                 </li>
@@ -111,7 +154,7 @@ class Comments extends Component {
             })}
           </ul>
         </div>
-        <AddComments userState={this.state.user}/>
+        <AddComments userState={this.state.user} />
       </div>
     );
   }
