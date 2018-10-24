@@ -12,9 +12,6 @@
   }
   &.show {
     left: 0;
-    .article-content{
-      // display: block;
-    }
   }
 
   .header {
@@ -32,7 +29,7 @@
 .article-content {
   display: none;
   background: $white;
-  overflow-y: scroll;
+  overflow-x: hidden;
   height: 100vh;
   padding: 1em;
   @media (min-width: $screen-sm) {

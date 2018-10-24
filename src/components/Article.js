@@ -82,13 +82,20 @@ class Article extends Component {
       <div className={articleClasses}>
         {this.state.cards.map((card, index) => {
           let article = "article-content"
-          if(this.props.one && (index === 0)){
+          if(
+            (this.props.articleOne && (index === 0)) ||
+            (this.props.articleTwo && (index === 1)) ||
+            (this.props.articleThree && (index === 2)) ||
+            (this.props.articleFour && (index === 3)) ||
+            (this.props.articleFive && (index === 4)) ||
+            (this.props.articleSix && (index === 5)) ||
+            (this.props.articleSeven && (index === 6))
+          ){
             article = "article-content block"
           } else{
             article = "article-content"
           }
 
-          console.log(article)
           return (
             <div className={article} id={`article${index}`} key={index}>
               <header>

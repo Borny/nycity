@@ -9,32 +9,95 @@ class Blog extends Component {
       cardsHide: false,
       articleShow: false,
 
-      articleOne: false
+      articleOne: false,
+      articleTwo: false,
+      articleThree: false,
+      articleFour: false,
+      articleFive: false,
+      articleSix: false,
+      articleSeven: false
     };
   }
 
-  articlesToggleHandler = (e) => {
-    console.log(e.target.id)
+  articlesOpenHandler = e => {
+    console.log(e.target.id);
 
-    if(e.target.id === "img0"){
-      console.log(this.state.articleOne)
-      this.setState(prevState =>{
-        return{
-            articleOne : !prevState.articleOne
-          }
-        }
-      )
-    }
-    this.setState(prevState => {
-      return {
+    if (e.target.id === "img0") {
+      this.setState((prevState) => {
+        return {
+        articleOne: true,
         cardsHide: !prevState.cardsHide,
         articleShow: !prevState.articleShow
-            };
-          });
+        };
+      });
+    } else if(e.target.id === "img1"){
+      this.setState((prevState) => {
+        return {
+        articleTwo: true,
+        cardsHide: !prevState.cardsHide,
+        articleShow: !prevState.articleShow
+        };
+      });
+    } else if(e.target.id === "img2"){
+      this.setState((prevState) => {
+        return {
+        articleThree: true,
+        cardsHide: !prevState.cardsHide,
+        articleShow: !prevState.articleShow
+        };
+      });
+    } 
+    else if(e.target.id === "img3"){
+      this.setState((prevState) => {
+        return {
+        articleFour: true,
+        cardsHide: !prevState.cardsHide,
+        articleShow: !prevState.articleShow
+        };
+      });
+    } 
+    else if(e.target.id === "img4"){
+      this.setState(() => {
+        return {
+        articleFive: true
+        };
+      });
+    } else if(e.target.id === "img5"){
+      this.setState(() => {
+        return {
+        articleSix: true
+        };
+      });
+    } else if(e.target.id === "img6"){
+      this.setState(() => {
+        return {
+        articleSeven: true
+        };
+      });
+    }
+    
+    this.setState(prevState => {
+      return {
+        
+      };
+    });
+  };
+
+  closeArticleHandler = prevState => {
+    this.setState({
+      cardsHide: false,
+      articleShow: false,
+      articleOne: false,
+      articleTwo: false,
+      articleThree: false,
+      articleFour: false,
+      articleFive: false,
+      articleSix: false,
+      articleSeven: false
+    });
   };
 
   render() {
-
     // sets a default class for the home component
     let blogClasses = "blog";
     if (this.props.open) {
@@ -62,13 +125,20 @@ class Blog extends Component {
           </button>
         </header>
         <Article
-            hideClick={this.articlesToggleHandler}
-            show={this.state.articleShow}
-            one={this.state.articleOne}
-            />
+          hideClick={this.closeArticleHandler}
+          show={this.state.articleShow}
+
+          articleOne={this.state.articleOne}
+          articleTwo={this.state.articleTwo}
+          articleThree={this.state.articleThree}
+          articleFour={this.state.articleFour}
+          articleFive={this.state.articleFive}
+          articleSix={this.state.articleSix}
+          articleSeven={this.state.articleSeven}
+        />
         <main className="main">
           <Cards
-            hideClick={this.articlesToggleHandler}
+            hideClick={this.articlesOpenHandler}
             hide={this.state.cardsHide}
           />
         </main>
