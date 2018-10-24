@@ -49,7 +49,6 @@ class AddComments extends Component {
       }
     });
   }
-  
   // login duh!!!
   login() {
     auth.signInWithPopup(provider)

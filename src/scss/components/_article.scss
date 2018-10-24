@@ -12,6 +12,9 @@
   }
   &.show {
     left: 0;
+    .article-content{
+      // display: block;
+    }
   }
 
   .header {
@@ -27,6 +30,7 @@
 }
 
 .article-content {
+  display: none;
   background: $white;
   overflow-y: scroll;
   height: 100vh;
@@ -36,6 +40,9 @@
     width: 70%;
     margin: 0 auto;
     border-radius: 4px;
+  }
+  &.block{
+    display: block;
   }
   header {
     @include flexbox();

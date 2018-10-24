@@ -7,17 +7,30 @@ class Blog extends Component {
     super();
     this.state = {
       cardsHide: false,
-      articleShow: false
+      articleShow: false,
+
+      articleOne: false
     };
   }
 
-  articlesToggleHandler = () => {
+  articlesToggleHandler = (e) => {
+    console.log(e.target.id)
+
+    if(e.target.id === "img0"){
+      console.log(this.state.articleOne)
+      this.setState(prevState =>{
+        return{
+            articleOne : !prevState.articleOne
+          }
+        }
+      )
+    }
     this.setState(prevState => {
       return {
         cardsHide: !prevState.cardsHide,
         articleShow: !prevState.articleShow
-      };
-    });
+            };
+          });
   };
 
   render() {
@@ -51,6 +64,7 @@ class Blog extends Component {
         <Article
             hideClick={this.articlesToggleHandler}
             show={this.state.articleShow}
+            one={this.state.articleOne}
             />
         <main className="main">
           <Cards

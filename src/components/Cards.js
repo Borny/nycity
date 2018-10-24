@@ -83,11 +83,11 @@ class Cards extends Component {
         <ul>
           {this.state.cards.map((card, index) => {
             return (
-              <li className="card" key={index} id={index} onClick={this.props.hideClick}>
+              <li className="card" key={index} id={index}>
                 <div className="card-content">
                   <span className="post-it">{card.dayNumberArticle}</span>
 
-                  <img src={this.state.cardsUrls[index]} alt="new york" />
+                  <img src={this.state.cardsUrls[index]} id={`img${index}`} alt="new york" onClick={this.props.hideClick}/>
 
                   <div className="card-text">
                     <p>{card.title}</p>
