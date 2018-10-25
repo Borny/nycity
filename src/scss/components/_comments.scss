@@ -28,7 +28,13 @@
     @include flexbox();
     @include justify-content(space-between);
     @include align-items(center);
-    padding: .5em .5em 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:$white;
+    width: 100%;
+    z-index: $zindex-comment-header;
+    padding: .5em;
     h2 {
       font-family: $fontPlaza;
       font-weight: $fontWeightBase;
@@ -39,6 +45,12 @@
   }
 
   .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background:$white;
+    width: 100%;
+    z-index: $zindex-comment-header;
     padding: 1em 0;
     background: $kashmirblue;
     display: flex;
@@ -55,9 +67,10 @@
 }
 
 .message-list {
-  padding: 1em;
-  flex: 1;
   overflow-y: scroll;
+  ul{
+    padding: 5em 1em;
+  }
 }
 
 .message-block {
