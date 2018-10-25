@@ -66,7 +66,7 @@ class Countdown extends Component {
 
         <div className="countdown countdown_ny">
         <header className="header_countdown header_ny">
-          <h1>New York City here we come!!!</h1>
+          <h1>New York City here we come!!</h1>
         </header>
           <p className="timer timer_ny">
             <span id="days" />
