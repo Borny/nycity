@@ -12,7 +12,8 @@ class Admin extends Component {
       summary: "",
       dayStory: "",
       user: null,
-      selectedFile: ""
+      selectedFile: "",
+      completedMessage: false
     };
   }
 
@@ -70,7 +71,9 @@ class Admin extends Component {
           function progress() {},
           function error(err) {},
           function complete() {
-            console.log("completed");
+          
+            alert('completed')
+            console.log('completed')
           }
         );
       }
@@ -103,6 +106,7 @@ class Admin extends Component {
         summary: "",
         dayStory: ""
       });
+
     }
     e.preventDefault();
   }
@@ -161,6 +165,7 @@ class Admin extends Component {
                   <option value="dayFour">Day four</option>
                   <option value="dayFive">Day five</option>
                   <option value="daySix">Day six</option>
+                  <option value="daySeven">Day seven</option>
                 </select>
               </label>
 
@@ -176,8 +181,11 @@ class Admin extends Component {
 
                 {/* Fake Pick a file button */}
                 <div>
-                  <p>Rename the photo by the day number<br/>
-                  (i.e : "cardOne.jpg")</p>
+                  <p>
+                    Rename the photo by the day number
+                    <br />
+                    (i.e : "cardOne.jpg")
+                  </p>
                   <button
                     onClick={() => this.fileInput.click()}
                     className="btn btn-go"
@@ -194,7 +202,9 @@ class Admin extends Component {
                   >
                     Upload
                   </button>
+                {this.state.completedMessage ?(<p>Upload complete</p>): (null)}                  
                 </div>
+
               </label>
             </div>
 
@@ -221,6 +231,7 @@ class Admin extends Component {
                   <option value="day four">Day four</option>
                   <option value="day five">Day five</option>
                   <option value="day six">Day six</option>
+                  <option value="day seven">Day seven</option>
                 </select>
               </label>
 
@@ -270,7 +281,7 @@ class Admin extends Component {
           </div>
         ) : (
           /* Logout button */
-          <button className="btn btn-tertiary" onClick={this.login.bind(this)}>
+          <button className="btn btn-go" onClick={this.login.bind(this)}>
             Login
           </button>
         )}

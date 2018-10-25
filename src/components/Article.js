@@ -4,6 +4,7 @@ import firebase from "../firebase";
 import Lightbox from "lightbox-react";
 import "lightbox-react/style.css";
 
+// day one images
 import img1 from "./../img/dayOne/imgOne.jpg";
 import img2 from "./../img/dayOne/imgTwo.jpg";
 import img3 from "./../img/dayOne/imgThree.jpg";
@@ -14,15 +15,12 @@ import img7 from "./../img/dayOne/imgSeven.jpg";
 import img8 from "./../img/dayOne/imgEight.jpg";
 import img9 from "./../img/dayOne/imgNine.jpg";
 
+// day two images
 import img10 from "./../img/dayTwo/imgOne.jpg";
 import img11 from "./../img/dayTwo/imgTwo.jpg";
 import img12 from "./../img/dayTwo/imgThree.jpg";
 import img13 from "./../img/dayTwo/imgFour.jpg";
 import img14 from "./../img/dayTwo/imgFive.jpg";
-// import img15 from "./../img/dayTwo/imgSix.jpg";
-// import img16 from "./../img/dayTwo/imgSeven.jpg";
-// import img17 from "./../img/dayTwo/imgEight.jpg";
-// import img18 from "./../img/dayTwo/imgNine.jpg";
 
 const imagesDayOne = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 const imagesDayTwo = [img10, img11, img12, img13, img14];
@@ -39,29 +37,29 @@ class Article extends Component {
     this.state = {
       photoIndex: 0,
       isOpen: false,
-      cards: [],
-      cardsUrls: ""
+      articles: [],
+      articlesUrls: ""
     };
   }
 
   componentDidMount() {
     // Fetching the datas
-    const cardsRef = firebase.database().ref("article_content");
+    const articlesRef = firebase.database().ref("article_content");
 
-    cardsRef.on("value", snapshot => {
-      let cards = snapshot.val();
+    articlesRef.on("value", snapshot => {
+      let articles = snapshot.val();
       let newState = [];
-      for (let card in cards) {
+      for (let card in articles) {
         newState.push({
           id: card,
-          title: cards[card].title,
-          dayNumberArticle: cards[card].dayNumberArticle,
-          summary: cards[card].summary,
-          dayStory: cards[card].dayStory
+          title: articles[card].title,
+          dayNumberArticle: articles[card].dayNumberArticle,
+          summary: articles[card].summary,
+          dayStory: articles[card].dayStory
         });
       }
       this.setState({
-        cards: newState
+        articles: newState
       });
     });
 
@@ -72,8 +70,8 @@ class Article extends Component {
       cardThree: "dayThree",
       cardFour: "dayFour",
       cardFive: "dayFive",
-      cardSix: "daySix",
-      cardSeven: "daySeven"
+      articlesix: "daySix",
+      articleseven: "daySeven"
     };
 
     const promises = [];
@@ -97,7 +95,7 @@ class Article extends Component {
           promisesUrls.push(url);
           // updating
           this.setState({
-            cardsUrls: promisesUrls
+            articlesUrls: promisesUrls
           });
         });
       })
@@ -107,36 +105,67 @@ class Article extends Component {
   }
 
   render() {
-    // sets a default class for the cards component
+    // sets a default class for the articles component
     let articleClasses = "article";
     if (this.props.show) {
       articleClasses = "article show";
     }
 
+    // lightbox props
     const { photoIndex, isOpen } = this.state;
+
+    // loading the proper array of images according to the day
+    let imagesLightBoxToLoad = [];
+    if (this.props.articleOne) {
+      imagesLightBoxToLoad = imagesDayOne;
+    } else if (this.props.articleTwo) {
+      imagesLightBoxToLoad = imagesDayTwo;
+    } else if (this.props.articleThree) {
+      imagesLightBoxToLoad = imagesDayThree;
+    } else if (this.props.articleFour) {
+      imagesLightBoxToLoad = imagesDayFour;
+    } else if (this.props.articleFive) {
+      imagesLightBoxToLoad = imagesDayFive;
+    } else if (this.props.articleSix) {
+      imagesLightBoxToLoad = imagesDaySix;
+    } else if (this.props.articleSeven) {
+      imagesLightBoxToLoad = imagesDaySeven;
+    }
 
     return (
       <div className={articleClasses}>
+        {/* loading the lightbox component  */}
         {isOpen && (
           <Lightbox
-            mainSrc={imagesDayTwo[photoIndex]}
-            nextSrc={imagesDayTwo[(photoIndex + 1) % imagesDayTwo.length]}
-            prevSrc={imagesDayTwo[(photoIndex + imagesDayTwo.length - 1) % imagesDayTwo.length]}
+            mainSrc={imagesLightBoxToLoad[photoIndex]}
+            nextSrc={
+              imagesLightBoxToLoad[
+                (photoIndex + 1) % imagesLightBoxToLoad.length
+              ]
+            }
+            prevSrc={
+              imagesLightBoxToLoad[
+                (photoIndex + imagesLightBoxToLoad.length - 1) %
+                  imagesLightBoxToLoad.length
+              ]
+            }
             onCloseRequest={() => this.setState({ isOpen: false })}
             onMovePrevRequest={() =>
               this.setState({
-                photoIndex: (photoIndex + imagesDayTwo.length - 1) % imagesDayTwo.length
+                photoIndex:
+                  (photoIndex + imagesLightBoxToLoad.length - 1) %
+                  imagesLightBoxToLoad.length
               })
             }
             onMoveNextRequest={() =>
               this.setState({
-                photoIndex: (photoIndex + 1) % imagesDayTwo.length
+                photoIndex: (photoIndex + 1) % imagesLightBoxToLoad.length
               })
             }
           />
         )}
 
-        {this.state.cards.map((card, index) => {
+        {this.state.articles.map((card, index) => {
           let article = "article-content";
           if (
             (this.props.articleOne && index === 0) ||
@@ -152,13 +181,24 @@ class Article extends Component {
             article = "article-content";
           }
 
-          let dayToLoad = [];
-          if(index === 0){
-            dayToLoad = imagesDayOne
-          } else if(index === 1){
-            dayToLoad = imagesDayTwo
+          // loading the proper array of images according to the day
+          let imagesToLoad = [];
+          if (index === 0) {
+            imagesToLoad = imagesDayOne;
+          } else if (index === 1) {
+            imagesToLoad = imagesDayTwo;
+          } else if (index === 2) {
+            imagesToLoad = imagesDayThree;
+          } else if (index === 3) {
+            imagesToLoad = imagesDayFour;
+          } else if (index === 4) {
+            imagesToLoad = imagesDayFive;
+          } else if (index === 5) {
+            imagesToLoad = imagesDaySix;
+          } else if (index === 6) {
+            imagesToLoad = imagesDaySeven;
           }
-          
+
           return (
             <div className={article} id={`article${index}`} key={index}>
               <header>
@@ -179,20 +219,21 @@ class Article extends Component {
               <main>
                 <img
                   className="article-img-title"
-                  src={this.state.cardsUrls[index]}
+                  src={this.state.articlesUrls[index]}
                   alt="new york"
                 />
 
                 <p className="article-summary">{card.summary}</p>
                 <p className="article-text">{card.dayStory}</p>
                 <div className="img-container">
-  
-                  {dayToLoad.map((image, index) => {
+                  {/* Going through an array of images according to the corresponding day */}
+                  {imagesToLoad.map((image, index) => {
                     return (
                       <div key={index}>
                         <img
                           src={image}
                           alt={image}
+                          // opening the lightbox when an image is clicked
                           onClick={() => this.setState({ isOpen: true })}
                         />
                       </div>
