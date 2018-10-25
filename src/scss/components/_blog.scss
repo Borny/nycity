@@ -17,6 +17,11 @@
   @media (min-width: $screen-lg) {
     &.open {
       width: 75%;
+      .article{
+        &.show{
+          width: 75%;
+        }
+      }
     }
   }
   .header {
