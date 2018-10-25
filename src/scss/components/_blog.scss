@@ -24,10 +24,6 @@
     }
   }
   .header {
-    @include flexbox();
-    @include flex-flow(row);
-    @include justify-content(space-between);
-    @include align-items(flex-start);
     width: 100%;
     padding: 1em;
     @media (min-width: $screen-sm) {
