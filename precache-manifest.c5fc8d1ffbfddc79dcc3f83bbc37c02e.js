@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/nycity/static/media/imgEight.0e27794c.jpg"
   },
   {
-    "revision": "2afcd350f7c59ebfce4d",
-    "url": "/nycity/static/css/main.a6b0fa53.chunk.css"
+    "revision": "3965d2a7efd963d780e4",
+    "url": "/nycity/static/css/main.0931450a.chunk.css"
   },
   {
     "revision": "36dc7844f7f110ff4a5046645ac61b73",
@@ -48,8 +48,8 @@ self.__precacheManifest = [
     "url": "/nycity/static/media/imgSeven.8d989eb3.jpg"
   },
   {
-    "revision": "2afcd350f7c59ebfce4d",
-    "url": "/nycity/static/js/main.2afcd350.chunk.js"
+    "revision": "3965d2a7efd963d780e4",
+    "url": "/nycity/static/js/main.3965d2a7.chunk.js"
   },
   {
     "revision": "2928256571389f2d027f80edc919e0d5",
@@ -88,11 +88,15 @@ self.__precacheManifest = [
     "url": "/nycity/static/media/GABRWFFR.0a969adf.TTF"
   },
   {
+    "revision": "1a75ef76ca3880dce21afc94c97f796e",
+    "url": "/nycity/static/media/BroadwayFlat.1a75ef76.ttf"
+  },
+  {
     "revision": "50ce103911f2b560e513",
     "url": "/nycity/static/css/1.9a186255.chunk.css"
   },
   {
-    "revision": "8c4cf68ea3ddde7e9d0d78dcbd6cacd5",
+    "revision": "cb5c5e4d0f6e930a9dc53b819f7f3eca",
     "url": "/nycity/index.html"
   }
 ];
