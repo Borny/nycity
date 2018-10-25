@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Countdown from "./Countdown";
 import Cards from "./Cards";
 import Article from "./Article";
 
@@ -23,63 +24,59 @@ class Blog extends Component {
     console.log(e.target.id);
 
     if (e.target.id === "img0") {
-      this.setState((prevState) => {
+      this.setState(prevState => {
         return {
-        articleOne: true,
-        cardsHide: !prevState.cardsHide,
-        articleShow: !prevState.articleShow
+          articleOne: true,
+          cardsHide: !prevState.cardsHide,
+          articleShow: !prevState.articleShow
         };
       });
-    } else if(e.target.id === "img1"){
-      this.setState((prevState) => {
+    } else if (e.target.id === "img1") {
+      this.setState(prevState => {
         return {
-        articleTwo: true,
-        cardsHide: !prevState.cardsHide,
-        articleShow: !prevState.articleShow
+          articleTwo: true,
+          cardsHide: !prevState.cardsHide,
+          articleShow: !prevState.articleShow
         };
       });
-    } else if(e.target.id === "img2"){
-      this.setState((prevState) => {
+    } else if (e.target.id === "img2") {
+      this.setState(prevState => {
         return {
-        articleThree: true,
-        cardsHide: !prevState.cardsHide,
-        articleShow: !prevState.articleShow
+          articleThree: true,
+          cardsHide: !prevState.cardsHide,
+          articleShow: !prevState.articleShow
         };
       });
-    } 
-    else if(e.target.id === "img3"){
-      this.setState((prevState) => {
+    } else if (e.target.id === "img3") {
+      this.setState(prevState => {
         return {
-        articleFour: true,
-        cardsHide: !prevState.cardsHide,
-        articleShow: !prevState.articleShow
+          articleFour: true,
+          cardsHide: !prevState.cardsHide,
+          articleShow: !prevState.articleShow
         };
       });
-    } 
-    else if(e.target.id === "img4"){
+    } else if (e.target.id === "img4") {
       this.setState(() => {
         return {
-        articleFive: true
+          articleFive: true
         };
       });
-    } else if(e.target.id === "img5"){
+    } else if (e.target.id === "img5") {
       this.setState(() => {
         return {
-        articleSix: true
+          articleSix: true
         };
       });
-    } else if(e.target.id === "img6"){
+    } else if (e.target.id === "img6") {
       this.setState(() => {
         return {
-        articleSeven: true
+          articleSeven: true
         };
       });
     }
-    
+
     this.setState(prevState => {
-      return {
-        
-      };
+      return {};
     });
   };
 
@@ -108,9 +105,9 @@ class Blog extends Component {
       <div className={blogClasses}>
         <header className="header">
           <h1>
-            New York City
+            {/* New York City
             <br />
-            October 2018
+            October 2018 */}
           </h1>
           <button
             className="btn btn-tertiary btn-comment"
@@ -125,10 +122,11 @@ class Blog extends Component {
           </button>
         </header>
 
+        <Countdown />
+
         <Article
           hideClick={this.closeArticleHandler}
           show={this.state.articleShow}
-
           articleOne={this.state.articleOne}
           articleTwo={this.state.articleTwo}
           articleThree={this.state.articleThree}

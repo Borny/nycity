@@ -16,8 +16,8 @@
   @media (min-width: $screen-lg) {
     &.open {
       width: 75%;
-      .article{
-        &.show{
+      .article {
+        &.show {
           width: 75%;
         }
       }
@@ -42,6 +42,10 @@ h1 {
   font-size: 2em;
   text-shadow: 1px 1px 8px $black;
   line-height: 1;
+  -webkit-animation: pulse 2s infinite;
+  -moz-animation: pulse 2s infinite;
+  -o-animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
   @media (min-width: $screen-sm) {
     font-size: 5.5em;
   }

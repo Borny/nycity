@@ -1,23 +1,32 @@
 ////////////////
 // FONT FAMILY
 ////////////////
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext');
-$fontRoboto: 'Roboto', Arial, sans-serif, serif, Helvetica;
-$fontPlaza: 'plaza';
-$fontGab: 'gab';
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext");
+$fontRoboto: "Roboto", Arial, sans-serif, serif, Helvetica;
+$fontPlaza: "plaza";
+$fontGab: "gab";
+$broadway: "broadway";
 
 // Plaza
 @font-face {
-    font-family: $fontPlaza;
-    src: url('../fonts/plaza/PlazaITC-Normal.ttf');
-    font-weight: normal;
-    font-style: normal;
+  font-family: $fontPlaza;
+  src: url("../fonts/plaza/PlazaITC-Normal.ttf");
+  font-weight: normal;
+  font-style: normal;
 }
 
 // Gab
 @font-face {
-    font-family: $fontGab;
-    src: url('../fonts/GABRWFFR.TTF');
-    font-weight: normal;
-    font-style: normal;
+  font-family: $fontGab;
+  src: url("../fonts/GABRWFFR.TTF");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Broadway
+@font-face {
+  font-family: $broadway;
+  src: url("../fonts/BroadwayFlat.ttf");
+  font-weight: normal;
+  font-style: normal;
 }

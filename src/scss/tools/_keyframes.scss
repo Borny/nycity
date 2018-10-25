@@ -1,0 +1,60 @@
+// PULSE SETTINGS USED FOR THE BUTTONS
+@keyframes pulse {
+    0% {
+        text-shadow: 0 0 0 $blazeorange;
+    }
+    50% {
+        text-shadow: 0 0 20px $blazeorange;
+    }
+    100% {
+        text-shadow: 0 0 0 $blazeorange;
+    }
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        text-shadow: 0 0 0 $blazeorange;
+    }
+    50% {
+        text-shadow: 0 0 20px $blazeorange;
+    }
+    100% {
+        text-shadow: 0 0 0 $blazeorange;
+    }
+}
+
+@-moz-keyframes pulse {
+    0% {
+        text-shadow: 0 0 0 $blazeorange;
+    }
+    50% {
+        text-shadow: 0 0 20px $blazeorange;
+    }
+    100% {
+        text-shadow: 0 0 0 $blazeorange;
+    }
+}
+
+@-ms-keyframes pulse {
+    0% {
+        text-shadow: 0 0 0 $blazeorange;
+    }
+    50% {
+        text-shadow: 0 0 20px $blazeorange;
+    }
+    100% {
+        text-shadow: 0 0 0 $blazeorange;
+    }
+}
+
+@-o-keyframes pulse {
+    0% {
+        text-shadow: 0 0 0 $blazeorange;
+    }
+    50% {
+        text-shadow: 0 0 20px $blazeorange;
+    }
+    100% {
+        text-shadow: 0 0 0 $blazeorange;
+    }
+}
