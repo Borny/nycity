@@ -6,12 +6,14 @@
   z-index: $zindex-cards;
   transition: right 0.4s ease-out;
   ul {
-    @media (min-width: $screen-sm) {
+    @media (min-width: $screen-xs) {
       @include flexbox();
       @include flex-flow(row wrap);
       @include align-items(flex-start);
-      width: 70%;
       margin: 0 auto;
+    }
+    @media (min-width: $screen-sm) {
+      width: 70%;
     }
   }
   &.hide {
@@ -24,7 +26,7 @@
   @include flexbox();
   @include flex-flow(row nowrap);
   padding: 1em;
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-xs) {
     width: 50%;
     background: none;
     border-top: none;
@@ -44,12 +46,12 @@
 }
 
 .card-content {
+  width: 100%;
   background: $whiteOpacity9;
   padding: 8px 8px 0;
   border-radius: 4px;
   position: relative;
   @media (min-width: $screen-sm) {
-    width: 100%;
     border-radius: 4px;
     box-shadow: 0 2px 6px 2px $blackOpacity5;
     padding: 8px 8px 0;

@@ -17,7 +17,7 @@
 
 .article-content {
   display: none;
-  background: $whiteOpacity9;
+  background: $white;
   overflow-x: hidden;
   height: 100vh;
   padding: 1em;
@@ -60,6 +60,8 @@
   color: $white;
   background: $kashmirblue;
   padding: .5em;
+  text-transform: uppercase;
+  font-weight: $fontWeightBold;
 }
 
 .article-text{

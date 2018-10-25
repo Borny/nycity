@@ -40,6 +40,15 @@
     z-index: $zindex-comment-header;
     padding: .5em;
     transition: right .4s ease-out;    
+    @media(min-width:$screen-sm){
+      width: 320px;
+      right: -320px;
+    }
+    @media(min-width:$screen-lg){
+      width: 25%;
+      right: -25%;
+      min-width: 25%;
+    }
     h2 {
       font-family: $fontPlaza;
       font-weight: $fontWeightBase;
@@ -62,7 +71,15 @@
     justify-content: center;
     margin-top: auto;
     transition: right .4s ease-out;    
-    
+    @media(min-width:$screen-sm){
+      width: 320px;
+      right: -320px;
+    }
+    @media(min-width:$screen-lg){
+      width: 25%;
+      right: -25%;
+      min-width: 25%;
+    }
 
     .form-add {
       width: 100%;
