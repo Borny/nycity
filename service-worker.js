@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/nycity/precache-manifest.06e629ebebdf47e337e1b44b05e47551.js"
+  "/nycity/precache-manifest.27d8ad368b5b5b37c26d833eae622eb6.js"
 );
 
 workbox.clientsClaim();
