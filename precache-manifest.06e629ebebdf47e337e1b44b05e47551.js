@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/nycity/static/media/imgEight.0e27794c.jpg"
   },
   {
-    "revision": "3965d2a7efd963d780e4",
-    "url": "/nycity/static/css/main.0931450a.chunk.css"
+    "revision": "518b4064a0453413b45b",
+    "url": "/nycity/static/css/main.867189f5.chunk.css"
   },
   {
     "revision": "36dc7844f7f110ff4a5046645ac61b73",
@@ -48,8 +48,8 @@ self.__precacheManifest = [
     "url": "/nycity/static/media/imgSeven.8d989eb3.jpg"
   },
   {
-    "revision": "3965d2a7efd963d780e4",
-    "url": "/nycity/static/js/main.3965d2a7.chunk.js"
+    "revision": "518b4064a0453413b45b",
+    "url": "/nycity/static/js/main.518b4064.chunk.js"
   },
   {
     "revision": "2928256571389f2d027f80edc919e0d5",
@@ -96,7 +96,7 @@ self.__precacheManifest = [
     "url": "/nycity/static/css/1.9a186255.chunk.css"
   },
   {
-    "revision": "cb5c5e4d0f6e930a9dc53b819f7f3eca",
+    "revision": "e1090ff818274f562e96ab5205150117",
     "url": "/nycity/index.html"
   }
 ];
