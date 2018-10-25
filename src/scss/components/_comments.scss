@@ -13,6 +13,10 @@
   transition: right .4s ease-out;
   &.open{
     right: 0;
+    .header,
+    .footer{
+      right: 0;
+    }
   }
   @media(min-width:$screen-sm){
     box-shadow: 0px 0 4px 2px $blackOpacity5;
@@ -28,13 +32,14 @@
     @include flexbox();
     @include justify-content(space-between);
     @include align-items(center);
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: 0;
+    right: -100%;
     background:$white;
     width: 100%;
     z-index: $zindex-comment-header;
     padding: .5em;
+    transition: right .4s ease-out;    
     h2 {
       font-family: $fontPlaza;
       font-weight: $fontWeightBase;
@@ -45,9 +50,9 @@
   }
 
   .footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    left: 0;
+    right: -100%;
     background:$white;
     width: 100%;
     z-index: $zindex-comment-header;
@@ -56,6 +61,8 @@
     display: flex;
     justify-content: center;
     margin-top: auto;
+    transition: right .4s ease-out;    
+    
 
     .form-add {
       width: 100%;
