@@ -8,8 +8,8 @@ self.__precacheManifest = [
     "url": "/nycity/static/css/main.3be8fd9d.chunk.css"
   },
   {
-    "revision": "eaba8a439764a39a17399643251e2b08",
-    "url": "/nycity/static/media/new-york-manhattan.eaba8a43.jpg"
+    "revision": "36dc7844f7f110ff4a5046645ac61b73",
+    "url": "/nycity/static/media/PlazaITC-Normal.36dc7844.ttf"
   },
   {
     "revision": "50ce103911f2b560e513",
@@ -76,16 +76,16 @@ self.__precacheManifest = [
     "url": "/nycity/static/media/imgFive.062efb95.jpg"
   },
   {
-    "revision": "36dc7844f7f110ff4a5046645ac61b73",
-    "url": "/nycity/static/media/PlazaITC-Normal.36dc7844.ttf"
+    "revision": "6a37f4ccbbd4a159f43ba0b8e9cfe80b",
+    "url": "/nycity/static/media/pink.6a37f4cc.png"
+  },
+  {
+    "revision": "eaba8a439764a39a17399643251e2b08",
+    "url": "/nycity/static/media/new-york-manhattan.eaba8a43.jpg"
   },
   {
     "revision": "0a969adf9fdfd775d04ac9d9c049cd94",
     "url": "/nycity/static/media/GABRWFFR.0a969adf.TTF"
-  },
-  {
-    "revision": "6a37f4ccbbd4a159f43ba0b8e9cfe80b",
-    "url": "/nycity/static/media/pink.6a37f4cc.png"
   },
   {
     "revision": "50ce103911f2b560e513",

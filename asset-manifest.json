@@ -7,7 +7,7 @@
   "static/js/1.50ce1039.chunk.js.map": "/nycity/static/js/1.50ce1039.chunk.js.map",
   "runtime~main.js": "/nycity/static/js/runtime~main.7e5637b1.js",
   "runtime~main.js.map": "/nycity/static/js/runtime~main.7e5637b1.js.map",
-  "static/media/style.scss": "/nycity/static/media/new-york-manhattan.eaba8a43.jpg",
+  "static/media/style.scss": "/nycity/static/media/PlazaITC-Normal.36dc7844.ttf",
   "static/media/imgOne.jpg": "/nycity/static/media/imgOne.6fa2007f.jpg",
   "static/media/imgThree.jpg": "/nycity/static/media/imgThree.9778e454.jpg",
   "static/media/imgFour.jpg": "/nycity/static/media/imgFour.0146a4b3.jpg",
@@ -17,9 +17,9 @@
   "static/media/imgEight.jpg": "/nycity/static/media/imgEight.0e27794c.jpg",
   "static/media/imgNine.jpg": "/nycity/static/media/imgNine.29282565.jpg",
   "static/media/imgTwo.jpg": "/nycity/static/media/imgTwo.31ff32f8.jpg",
-  "static/css/main.3be8fd9d.chunk.css.map": "/nycity/static/css/main.3be8fd9d.chunk.css.map",
   "static/css/1.9a186255.chunk.css.map": "/nycity/static/css/1.9a186255.chunk.css.map",
+  "static/css/main.3be8fd9d.chunk.css.map": "/nycity/static/css/main.3be8fd9d.chunk.css.map",
   "index.html": "/nycity/index.html",
-  "precache-manifest.e96cbc76adbb9ab6da3bd090208258c1.js": "/nycity/precache-manifest.e96cbc76adbb9ab6da3bd090208258c1.js",
+  "precache-manifest.69812c32de34bb0e064b2b059ee90fcc.js": "/nycity/precache-manifest.69812c32de34bb0e064b2b059ee90fcc.js",
   "service-worker.js": "/nycity/service-worker.js"
 }
