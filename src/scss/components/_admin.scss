@@ -13,19 +13,28 @@
 .form-admin {
   @include flexbox();
   @include flex-flow(column nowrap);
-  width: 50%;
   margin: 0 auto 1em;
   border: 1px solid $white;
   border-radius: 4px;
   padding: 1em;
-  h2{
+  @media(min-width:$screen-sm){
+    width: 50%;
+  }
+  h2,
+  p{
     color: $white;
   }
+
 }
 
 .admin-upload-picture{
   @include flexbox();
-  @include justify-content(flex-start);
+  @include justify-content(space-around);
+  @include flex-flow(column nowrap);
+  @media(min-width:$screen-sm){
+    @include align-items(flex-end);
+    @include flex-flow(row nowrap);
+  }
 }
 
 .label-admin {

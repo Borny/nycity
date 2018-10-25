@@ -175,21 +175,26 @@ class Admin extends Component {
                 />
 
                 {/* Fake Pick a file button */}
-                <button
-                  onClick={() => this.fileInput.click()}
-                  className="btn btn-go"
-                  ref="pickfile"
-                >
-                  Pick file
-                </button>
-
-                {/* Upload image button */}
-                <button
-                  onClick={this.handleUpload.bind(this)}
-                  className="btn btn-warning"
-                >
-                  Upload
-                </button>
+                <div>
+                  <p>Rename the photo by the day number<br/>
+                  (i.e : "cardOne.jpg")</p>
+                  <button
+                    onClick={() => this.fileInput.click()}
+                    className="btn btn-go"
+                    ref="pickfile"
+                  >
+                    Pick file
+                  </button>
+                </div>
+                <div>
+                  {/* Upload image button */}
+                  <button
+                    onClick={this.handleUpload.bind(this)}
+                    className="btn btn-warning"
+                  >
+                    Upload
+                  </button>
+                </div>
               </label>
             </div>
 
