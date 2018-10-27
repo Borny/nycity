@@ -38,6 +38,8 @@ class Comments extends Component {
             minute: "2-digit"
           }).format(messages[message].sentAt)
         });
+
+
       }
       this.setState({
         messagesList: newState
@@ -119,10 +121,10 @@ class Comments extends Component {
           <ul>
             {this.state.messagesList.map(message => {
               if (
-                message.email === "tristan.deloris@gmail.com"
+                message.user === "Tristan Deloris"
               ) {
                 messageClasses = "message-block admin admin-t";
-              } else if(message.email === "jon.naeck@gmail.com"){
+              } else if(message.user === "Jonathan Naeck"){
                 messageClasses = "message-block admin admin-j";
               } else {
                 messageClasses = "message-block";
