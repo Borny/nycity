@@ -4,31 +4,31 @@ import firebase from "../firebase";
 import Lightbox from "lightbox-react";
 import "lightbox-react/style.css";
 
-// day one images
-import img1 from "./../img/dayOne/imgOne.jpg";
-import img2 from "./../img/dayOne/imgTwo.jpg";
-import img3 from "./../img/dayOne/imgThree.jpg";
-import img4 from "./../img/dayOne/imgFour.jpg";
-import img5 from "./../img/dayOne/imgFive.jpg";
-import img6 from "./../img/dayOne/imgSix.jpg";
-import img7 from "./../img/dayOne/imgSeven.jpg";
-import img8 from "./../img/dayOne/imgEight.jpg";
-import img9 from "./../img/dayOne/imgNine.jpg";
+// // day one images
+// import img1 from "./../img/dayOne/imgOne.jpg";
+// import img2 from "./../img/dayOne/imgTwo.jpg";
+// import img3 from "./../img/dayOne/imgThree.jpg";
+// import img4 from "./../img/dayOne/imgFour.jpg";
+// import img5 from "./../img/dayOne/imgFive.jpg";
+// import img6 from "./../img/dayOne/imgSix.jpg";
+// import img7 from "./../img/dayOne/imgSeven.jpg";
+// import img8 from "./../img/dayOne/imgEight.jpg";
+// import img9 from "./../img/dayOne/imgNine.jpg";
 
-// day two images
-import img10 from "./../img/dayTwo/imgOne.jpg";
-import img11 from "./../img/dayTwo/imgTwo.jpg";
-import img12 from "./../img/dayTwo/imgThree.jpg";
-import img13 from "./../img/dayTwo/imgFour.jpg";
-import img14 from "./../img/dayTwo/imgFive.jpg";
+// // day two images
+// import img10 from "./../img/dayTwo/imgOne.jpg";
+// import img11 from "./../img/dayTwo/imgTwo.jpg";
+// import img12 from "./../img/dayTwo/imgThree.jpg";
+// import img13 from "./../img/dayTwo/imgFour.jpg";
+// import img14 from "./../img/dayTwo/imgFive.jpg";
 
-const imagesDayOne = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
-const imagesDayTwo = [img10, img11, img12, img13, img14];
-const imagesDayThree = [img1, img2, img3, img4, img5, img6];
-const imagesDayFour = [img1, img2, img3, img4, img5, img6];
-const imagesDayFive = [img1, img2, img3, img4, img5, img6];
-const imagesDaySix = [img1, img2, img3, img4, img5, img6];
-const imagesDaySeven = [img1, img2, img3, img4, img5, img6];
+// const imagesDayOne = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
+// const imagesDayTwo = [img10, img11, img12, img13, img14];
+// const imagesDayThree = [img1, img2, img3, img4, img5, img6];
+// const imagesDayFour = [img1, img2, img3, img4, img5, img6];
+// const imagesDayFive = [img1, img2, img3, img4, img5, img6];
+// const imagesDaySix = [img1, img2, img3, img4, img5, img6];
+// const imagesDaySeven = [img1, img2, img3, img4, img5, img6];
 
 class Article extends Component {
   constructor(props) {
@@ -116,21 +116,21 @@ class Article extends Component {
 
     // loading the proper array of images according to the day
     let imagesLightBoxToLoad = [];
-    if (this.props.articleOne) {
-      imagesLightBoxToLoad = imagesDayOne;
-    } else if (this.props.articleTwo) {
-      imagesLightBoxToLoad = imagesDayTwo;
-    } else if (this.props.articleThree) {
-      imagesLightBoxToLoad = imagesDayThree;
-    } else if (this.props.articleFour) {
-      imagesLightBoxToLoad = imagesDayFour;
-    } else if (this.props.articleFive) {
-      imagesLightBoxToLoad = imagesDayFive;
-    } else if (this.props.articleSix) {
-      imagesLightBoxToLoad = imagesDaySix;
-    } else if (this.props.articleSeven) {
-      imagesLightBoxToLoad = imagesDaySeven;
-    }
+    // if (this.props.articleOne) {
+    //   imagesLightBoxToLoad = imagesDayOne;
+    // } else if (this.props.articleTwo) {
+    //   imagesLightBoxToLoad = imagesDayTwo;
+    // } else if (this.props.articleThree) {
+    //   imagesLightBoxToLoad = imagesDayThree;
+    // } else if (this.props.articleFour) {
+    //   imagesLightBoxToLoad = imagesDayFour;
+    // } else if (this.props.articleFive) {
+    //   imagesLightBoxToLoad = imagesDayFive;
+    // } else if (this.props.articleSix) {
+    //   imagesLightBoxToLoad = imagesDaySix;
+    // } else if (this.props.articleSeven) {
+    //   imagesLightBoxToLoad = imagesDaySeven;
+    // }
 
     return (
       <div className={articleClasses}>
@@ -183,21 +183,21 @@ class Article extends Component {
 
           // loading the proper array of images according to the day
           let imagesToLoad = [];
-          if (index === 0) {
-            imagesToLoad = imagesDayOne;
-          } else if (index === 1) {
-            imagesToLoad = imagesDayTwo;
-          } else if (index === 2) {
-            imagesToLoad = imagesDayThree;
-          } else if (index === 3) {
-            imagesToLoad = imagesDayFour;
-          } else if (index === 4) {
-            imagesToLoad = imagesDayFive;
-          } else if (index === 5) {
-            imagesToLoad = imagesDaySix;
-          } else if (index === 6) {
-            imagesToLoad = imagesDaySeven;
-          }
+          // if (index === 0) {
+          //   imagesToLoad = imagesDayOne;
+          // } else if (index === 1) {
+          //   imagesToLoad = imagesDayTwo;
+          // } else if (index === 2) {
+          //   imagesToLoad = imagesDayThree;
+          // } else if (index === 3) {
+          //   imagesToLoad = imagesDayFour;
+          // } else if (index === 4) {
+          //   imagesToLoad = imagesDayFive;
+          // } else if (index === 5) {
+          //   imagesToLoad = imagesDaySix;
+          // } else if (index === 6) {
+          //   imagesToLoad = imagesDaySeven;
+          // }
 
           return (
             <div className={article} id={`article${index}`} key={index}>

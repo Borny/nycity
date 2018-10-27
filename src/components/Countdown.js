@@ -28,18 +28,18 @@ class Countdown extends Component {
         if (timeRemaining >= 0) {
           days = parseInt(timeRemaining / 86400);
           timeRemaining = timeRemaining % 86400;
-          console.log(days);
+          // console.log(days);
 
           hours = parseInt(timeRemaining / 3600);
           timeRemaining = timeRemaining % 3600;
-          console.log(hours);
+          // console.log(hours);
 
           minutes = parseInt(timeRemaining / 60);
           timeRemaining = timeRemaining % 60;
-          console.log(minutes);
+          // console.log(minutes);
 
           seconds = parseInt(timeRemaining);
-          console.log(seconds);
+          // console.log(seconds);
 
           document.getElementById("days").innerHTML = parseInt(days, 10);
           document.getElementById("hours").innerHTML = ("0" + hours).slice(-2);
@@ -66,9 +66,11 @@ class Countdown extends Component {
 
         <div className="countdown countdown_ny">
         <header className="header_countdown header_ny">
-          <h1>New York City here we come!!</h1>
+          <h1>New York City
+            <br />
+            October 2018</h1>
         </header>
-          <p className="timer timer_ny">
+          {/* <p className="timer timer_ny">
             <span id="days" />
             Day
             <span id="hours" />
@@ -78,7 +80,7 @@ class Countdown extends Component {
             <br />
             <span id="seconds" />
             Seconds
-          </p>
+          </p> */}
         </div>
       </div>
     );

@@ -119,10 +119,11 @@ class Comments extends Component {
           <ul>
             {this.state.messagesList.map(message => {
               if (
-                message.user === "Tristan Deloris" ||
-                message.user === "Jonathan Naeck"
+                message.email === "tristan.deloris@gmail.com"
               ) {
-                messageClasses = "message-block admin";
+                messageClasses = "message-block admin admin-t";
+              } else if(message.email === "jon.naeck@gmail.com"){
+                messageClasses = "message-block admin admin-j";
               } else {
                 messageClasses = "message-block";
               }
