@@ -42,8 +42,57 @@ import img34 from "./../img/dayOne/img34.jpg";
 import img35 from "./../img/dayOne/img35.jpg";
 import img36 from "./../img/dayOne/img36.jpg";
 
+// day two images
+import imga1 from "./../img/dayTwo/img1.jpg";
+import imga2 from "./../img/dayTwo/img2.jpg";
+import imga3 from "./../img/dayTwo/img3.jpg";
+import imga4 from "./../img/dayTwo/img4.jpg";
+import imga5 from "./../img/dayTwo/img5.jpg";
+import imga6 from "./../img/dayTwo/img6.jpg";
+import imga7 from "./../img/dayTwo/img7.jpg";
+import imga8 from "./../img/dayTwo/img8.jpg";
+import imga9 from "./../img/dayTwo/img9.jpg";
+import imga10 from "./../img/dayTwo/img10.jpg";
+import imga11 from "./../img/dayTwo/img11.jpg";
+import imga12 from "./../img/dayTwo/img12.jpg";
+import imga13 from "./../img/dayTwo/img13.jpg";
+import imga14 from "./../img/dayTwo/img14.jpg";
+import imga15 from "./../img/dayTwo/img15.jpg";
+import imga16 from "./../img/dayTwo/img16.jpg";
+import imga17 from "./../img/dayTwo/img17.jpg";
+import imga18 from "./../img/dayTwo/img18.jpg";
+import imga19 from "./../img/dayTwo/img19.jpg";
+import imga20 from "./../img/dayTwo/img20.jpg";
+import imga21 from "./../img/dayTwo/img21.jpg";
+import imga22 from "./../img/dayTwo/img22.jpg";
+import imga23 from "./../img/dayTwo/img23.jpg";
+import imga24 from "./../img/dayTwo/img24.jpg";
+import imga25 from "./../img/dayTwo/img25.jpg";
+import imga26 from "./../img/dayTwo/img26.jpg";
+import imga27 from "./../img/dayTwo/img27.jpg";
+import imga28 from "./../img/dayTwo/img28.jpg";
+import imga29 from "./../img/dayTwo/img29.jpg";
+import imga30 from "./../img/dayTwo/img30.jpg";
+import imga31 from "./../img/dayTwo/img31.jpg";
+import imga32 from "./../img/dayTwo/img32.jpg";
+import imga33 from "./../img/dayTwo/img33.jpg";
+import imga34 from "./../img/dayTwo/img34.jpg";
+import imga35 from "./../img/dayTwo/img35.jpg";
+import imga36 from "./../img/dayTwo/img36.jpg";
+import imga37 from "./../img/dayTwo/img37.jpg";
+import imga38 from "./../img/dayTwo/img38.jpg";
+import imga39 from "./../img/dayTwo/img39.jpg";
+import imga40 from "./../img/dayTwo/img40.jpg";
+import imga41 from "./../img/dayTwo/img41.jpg";
+import imga42 from "./../img/dayTwo/img42.jpg";
+
+
+
 
 const imagesDayOne = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,img11,img12,img13,img14,img15,img16,img20,img21,img22,img23,img24,img25,img27,img28,img29,img30,img31,img32,img33,img34,img35,img36
+];
+
+const imagesDayTwo = [ imga1,  imga2,  imga3,  imga4,  imga5,  imga6,  imga7,  imga8,  imga9,  imga10, imga11, imga12, imga13, imga14, imga15, imga16, imga20, imga21, imga22, imga23, imga24, imga25, imga27, imga28, imga29, imga30, imga31, imga32, imga33, imga34, imga35, imga36, imga37, imga38, imga39, imga40, imga41, imga42
 ];
 // const imagesDayTwo = [img10, img11, img12, img13, img14];
 // const imagesDayThree = [img1, img2, img3, img4, img5, img6];
@@ -140,10 +189,10 @@ class Article extends Component {
     let imagesLightBoxToLoad = [];
     if (this.props.articleOne) {
       imagesLightBoxToLoad = imagesDayOne;
-    } 
-    // else if (this.props.articleTwo) {
-    //   imagesLightBoxToLoad = imagesDayTwo;
-    // } else if (this.props.articleThree) {
+    } else if (this.props.articleTwo) {
+      imagesLightBoxToLoad = imagesDayTwo;
+    }
+    //  else if (this.props.articleThree) {
     //   imagesLightBoxToLoad = imagesDayThree;
     // } else if (this.props.articleFour) {
     //   imagesLightBoxToLoad = imagesDayFour;
@@ -208,10 +257,10 @@ class Article extends Component {
           let imagesToLoad = [];
           if (index === 0) {
             imagesToLoad = imagesDayOne;
+          } else if (index === 1) {
+            imagesToLoad = imagesDayTwo;
           }
-          //  else if (index === 1) {
-          //   imagesToLoad = imagesDayTwo;
-          // } else if (index === 2) {
+          // else if (index === 2) {
           //   imagesToLoad = imagesDayThree;
           // } else if (index === 3) {
           //   imagesToLoad = imagesDayFour;
