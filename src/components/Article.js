@@ -86,20 +86,36 @@ import imga40 from "./../img/dayTwo/img40.jpg";
 import imga41 from "./../img/dayTwo/img41.jpg";
 import imga42 from "./../img/dayTwo/img42.jpg";
 
-
-
+// day three images
+import imag1 from "./../img/dayThree/img1.jpg";
+import imag2 from "./../img/dayThree/img2.jpg";
+import imag3 from "./../img/dayThree/img3.jpg";
+import imag4 from "./../img/dayThree/img4.jpg";
+import imag5 from "./../img/dayThree/img5.jpg";
+import imag6 from "./../img/dayThree/img6.jpg";
+import imag7 from "./../img/dayThree/img7.jpg";
+import imag8 from "./../img/dayThree/img8.jpg";
+import imag9 from "./../img/dayThree/img9.jpg";
+import imag10 from "./../img/dayThree/img10.jpg";
+import imag11 from "./../img/dayThree/img11.jpg";
+import imag12 from "./../img/dayThree/img12.jpg";
+import imag13 from "./../img/dayThree/img13.jpg";
+import imag14 from "./../img/dayThree/img14.jpg";
+import imag15 from "./../img/dayThree/img15.jpg";
+import imag16 from "./../img/dayThree/img16.jpg";
+import imag17 from "./../img/dayThree/img17.jpg";
+import imag18 from "./../img/dayThree/img18.jpg";
+import imag19 from "./../img/dayThree/img19.jpg";
+import imag20 from "./../img/dayThree/img20.jpg";
+import imag21 from "./../img/dayThree/img21.jpg";
 
 const imagesDayOne = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,img11,img12,img13,img14,img15,img16,img20,img21,img22,img23,img24,img25,img27,img28,img29,img30,img31,img32,img33,img34,img35,img36
 ];
 
-const imagesDayTwo = [ imga1,  imga2,  imga3,  imga4,  imga5,  imga6,  imga7,  imga8,  imga9,  imga10, imga11, imga12, imga13, imga14, imga15, imga16, imga20, imga21, imga22, imga23, imga24, imga25, imga27, imga28, imga29, imga30, imga31, imga32, imga33, imga34, imga35, imga36, imga37, imga38, imga39, imga40, imga41, imga42
+const imagesDayTwo = [ imga1,  imga2,  imga3,  imga4,  imga5,  imga6,  imga7,  imga8,  imga9,  imga10, imga11, imga12, imga13, imga14, imga15, imga16,imga17,imga18,imga19, imga20, imga21, imga22, imga23, imga24, imga25, imga26,imga27, imga28, imga29, imga30, imga31, imga32, imga33, imga34, imga35, imga36, imga37, imga38, imga39, imga40, imga41, imga42
 ];
-// const imagesDayTwo = [img10, img11, img12, img13, img14];
-// const imagesDayThree = [img1, img2, img3, img4, img5, img6];
-// const imagesDayFour = [img1, img2, img3, img4, img5, img6];
-// const imagesDayFive = [img1, img2, img3, img4, img5, img6];
-// const imagesDaySix = [img1, img2, img3, img4, img5, img6];
-// const imagesDaySeven = [img1, img2, img3, img4, img5, img6];
+
+const imagesDayThree = [ imag1,  imag2,  imag3,  imag4,  imag5,  imag6,  imag7,  imag8,  imag9,  imag10, imag11, imag12, imag13, imag14, imag15, imag16,imag17,imag18,imag19, imag20, imag21];
 
 class Article extends Component {
   constructor(props) {
@@ -191,10 +207,10 @@ class Article extends Component {
       imagesLightBoxToLoad = imagesDayOne;
     } else if (this.props.articleTwo) {
       imagesLightBoxToLoad = imagesDayTwo;
+    } else if (this.props.articleThree) {
+      imagesLightBoxToLoad = imagesDayThree;
     }
-    //  else if (this.props.articleThree) {
-    //   imagesLightBoxToLoad = imagesDayThree;
-    // } else if (this.props.articleFour) {
+    // else if (this.props.articleFour) {
     //   imagesLightBoxToLoad = imagesDayFour;
     // } else if (this.props.articleFive) {
     //   imagesLightBoxToLoad = imagesDayFive;
@@ -259,10 +275,10 @@ class Article extends Component {
             imagesToLoad = imagesDayOne;
           } else if (index === 1) {
             imagesToLoad = imagesDayTwo;
+          } else if (index === 2) {
+            imagesToLoad = imagesDayThree;
           }
-          // else if (index === 2) {
-          //   imagesToLoad = imagesDayThree;
-          // } else if (index === 3) {
+          //  else if (index === 3) {
           //   imagesToLoad = imagesDayFour;
           // } else if (index === 4) {
           //   imagesToLoad = imagesDayFive;
