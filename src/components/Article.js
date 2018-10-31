@@ -109,6 +109,43 @@ import imag19 from "./../img/dayThree/img19.jpg";
 import imag20 from "./../img/dayThree/img20.jpg";
 import imag21 from "./../img/dayThree/img21.jpg";
 
+// day Four
+import im1 from "./../img/dayFour/img1.jpg";
+import im2 from "./../img/dayFour/img2.jpg";
+import im3 from "./../img/dayFour/img3.jpg";
+import im4 from "./../img/dayFour/img4.jpg";
+import im5 from "./../img/dayFour/img5.jpg";
+import im6 from "./../img/dayFour/img6.jpg";
+import im7 from "./../img/dayFour/img7.jpg";
+import im8 from "./../img/dayFour/img8.jpg";
+import im9 from "./../img/dayFour/img9.jpg";
+import im10 from "./../img/dayFour/img10.jpg";
+import im11 from "./../img/dayFour/img11.jpg";
+import im12 from "./../img/dayFour/img12.jpg";
+import im13 from "./../img/dayFour/img13.jpg";
+import im14 from "./../img/dayFour/img14.jpg";
+import im15 from "./../img/dayFour/img15.jpg";
+import im16 from "./../img/dayFour/img16.jpg";
+import im17 from "./../img/dayFour/img17.jpg";
+import im18 from "./../img/dayFour/img18.jpg";
+import im19 from "./../img/dayFour/img19.jpg";
+import im20 from "./../img/dayFour/img20.jpg";
+import im21 from "./../img/dayFour/img21.jpg";
+import im22 from "./../img/dayFour/img22.jpg";
+import im23 from "./../img/dayFour/img23.jpg";
+import im24 from "./../img/dayFour/img24.jpg";
+import im25 from "./../img/dayFour/img25.jpg";
+import im26 from "./../img/dayFour/img26.jpg";
+import im27 from "./../img/dayFour/img27.jpg";
+import im28 from "./../img/dayFour/img28.jpg";
+import im29 from "./../img/dayFour/img29.jpg";
+import im30 from "./../img/dayFour/img30.jpg";
+import im31 from "./../img/dayFour/img31.jpg";
+import im32 from "./../img/dayFour/img32.jpg";
+import im33 from "./../img/dayFour/img33.jpg";
+import im34 from "./../img/dayFour/img34.jpg";
+import im35 from "./../img/dayFour/img35.jpg";
+
 const imagesDayOne = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,img11,img12,img13,img14,img15,img16,img20,img21,img22,img23,img24,img25,img27,img28,img29,img30,img31,img32,img33,img34,img35,img36
 ];
 
@@ -116,6 +153,8 @@ const imagesDayTwo = [ imga1,  imga2,  imga3,  imga4,  imga5,  imga6,  imga7,  i
 ];
 
 const imagesDayThree = [ imag1,  imag2,  imag3,  imag4,  imag5,  imag6,  imag7,  imag8,  imag9,  imag10, imag11, imag12, imag13, imag14, imag15, imag16,imag17,imag18,imag19, imag20, imag21];
+
+const imagesDayFour = [ im1,  im2,  im3,  im4,  im5,  im6,  im7,  im8,  im9,  im10, im11, im12, im13, im14, im15, im16,im17,im18,im19, im20, im21, im22, im23, im24, im25, im26,im27, im28, im29, im30, im31, im32, im33, im34, im35];
 
 class Article extends Component {
   constructor(props) {
@@ -209,10 +248,10 @@ class Article extends Component {
       imagesLightBoxToLoad = imagesDayTwo;
     } else if (this.props.articleThree) {
       imagesLightBoxToLoad = imagesDayThree;
-    }
-    // else if (this.props.articleFour) {
-    //   imagesLightBoxToLoad = imagesDayFour;
-    // } else if (this.props.articleFive) {
+    } else if (this.props.articleFour) {
+      imagesLightBoxToLoad = imagesDayFour;
+     }
+  //  else if (this.props.articleFive) {
     //   imagesLightBoxToLoad = imagesDayFive;
     // } else if (this.props.articleSix) {
     //   imagesLightBoxToLoad = imagesDaySix;
@@ -277,10 +316,10 @@ class Article extends Component {
             imagesToLoad = imagesDayTwo;
           } else if (index === 2) {
             imagesToLoad = imagesDayThree;
+          } else if (index === 3) {
+            imagesToLoad = imagesDayFour;
           }
-          //  else if (index === 3) {
-          //   imagesToLoad = imagesDayFour;
-          // } else if (index === 4) {
+          //  else if (index === 4) {
           //   imagesToLoad = imagesDayFive;
           // } else if (index === 5) {
           //   imagesToLoad = imagesDaySix;
