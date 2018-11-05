@@ -55,9 +55,11 @@ class Blog extends Component {
         };
       });
     } else if (e.target.id === "img4") {
-      this.setState(() => {
+      this.setState(prevState => {
         return {
-          articleFive: true
+          articleFive: true,
+          cardsHide: !prevState.cardsHide,
+          articleShow: !prevState.articleShow
         };
       });
     } else if (e.target.id === "img5") {

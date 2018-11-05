@@ -146,6 +146,36 @@ import im33 from "./../img/dayFour/img33.jpg";
 import im34 from "./../img/dayFour/img34.jpg";
 import im35 from "./../img/dayFour/img35.jpg";
 
+// day Five
+import image1 from "./../img/dayFive/image1.jpg";
+import image2 from "./../img/dayFive/image2.jpg";
+import image3 from "./../img/dayFive/image3.jpg";
+import image4 from "./../img/dayFive/image4.jpg";
+import image5 from "./../img/dayFive/image5.jpg";
+import image6 from "./../img/dayFive/image6.jpg";
+import image7 from "./../img/dayFive/image7.jpg";
+import image8 from "./../img/dayFive/image8.jpg";
+import image9 from "./../img/dayFive/image9.jpg";
+import image10 from "./../img/dayFive/image10.jpg";
+import image11 from "./../img/dayFive/image11.jpg";
+import image12 from "./../img/dayFive/image12.jpg";
+import image13 from "./../img/dayFive/image13.jpg";
+import image14 from "./../img/dayFive/image14.jpg";
+import image15 from "./../img/dayFive/image15.jpg";
+import image16 from "./../img/dayFive/image16.jpg";
+import image17 from "./../img/dayFive/image17.jpg";
+import image18 from "./../img/dayFive/image18.jpg";
+import image19 from "./../img/dayFive/image19.jpg";
+import image20 from "./../img/dayFive/image20.jpg";
+import image21 from "./../img/dayFive/image21.jpg";
+import image22 from "./../img/dayFive/image22.jpg";
+import image23 from "./../img/dayFive/image23.jpg";
+import image24 from "./../img/dayFive/image24.jpg";
+import image25 from "./../img/dayFive/image25.jpg";
+import image26 from "./../img/dayFive/image26.jpg";
+import image27 from "./../img/dayFive/image27.jpg";
+import image28 from "./../img/dayFive/image28.jpg";
+
 const imagesDayOne = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,img11,img12,img13,img14,img15,img16,img20,img21,img22,img23,img24,img25,img27,img28,img29,img30,img31,img32,img33,img34,img35,img36
 ];
 
@@ -155,6 +185,8 @@ const imagesDayTwo = [ imga1,  imga2,  imga3,  imga4,  imga5,  imga6,  imga7,  i
 const imagesDayThree = [ imag1,  imag2,  imag3,  imag4,  imag5,  imag6,  imag7,  imag8,  imag9,  imag10, imag11, imag12, imag13, imag14, imag15, imag16,imag17,imag18,imag19, imag20, imag21];
 
 const imagesDayFour = [ im1,  im2,  im3,  im4,  im5,  im6,  im7,  im8,  im9,  im10, im11, im12, im13, im14, im15, im16,im17,im18,im19, im20, im21, im22, im23, im24, im25, im26,im27, im28, im29, im30, im31, im32, im33, im34, im35];
+
+const imagesDayFive = [ image1,  image2,  image3,  image4,  image5,  image6,  image7,  image8,  image9,  image10, image11, image12, image13, image14, image15, image16,image17,image18,image19, image20, image21, image22, image23, image24, image25, image26,image27, image28];
 
 class Article extends Component {
   constructor(props) {
@@ -250,14 +282,9 @@ class Article extends Component {
       imagesLightBoxToLoad = imagesDayThree;
     } else if (this.props.articleFour) {
       imagesLightBoxToLoad = imagesDayFour;
-     }
-  //  else if (this.props.articleFive) {
-    //   imagesLightBoxToLoad = imagesDayFive;
-    // } else if (this.props.articleSix) {
-    //   imagesLightBoxToLoad = imagesDaySix;
-    // } else if (this.props.articleSeven) {
-    //   imagesLightBoxToLoad = imagesDaySeven;
-    // }
+     } else if (this.props.articleFive) {
+      imagesLightBoxToLoad = imagesDayFive;
+    }
 
     return (
       <div className={articleClasses}>
@@ -299,9 +326,7 @@ class Article extends Component {
             (this.props.articleTwo && index === 1) ||
             (this.props.articleThree && index === 2) ||
             (this.props.articleFour && index === 3) ||
-            (this.props.articleFive && index === 4) ||
-            (this.props.articleSix && index === 5) ||
-            (this.props.articleSeven && index === 6)
+            (this.props.articleFive && index === 4)
           ) {
             article = "article-content block";
           } else {
@@ -318,14 +343,9 @@ class Article extends Component {
             imagesToLoad = imagesDayThree;
           } else if (index === 3) {
             imagesToLoad = imagesDayFour;
+          } else if (index === 4) {
+            imagesToLoad = imagesDayFive;
           }
-          //  else if (index === 4) {
-          //   imagesToLoad = imagesDayFive;
-          // } else if (index === 5) {
-          //   imagesToLoad = imagesDaySix;
-          // } else if (index === 6) {
-          //   imagesToLoad = imagesDaySeven;
-          // }
 
           return (
             <div className={article} id={`article${index}`} key={index}>
