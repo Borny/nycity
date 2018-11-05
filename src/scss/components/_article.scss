@@ -5,8 +5,8 @@
   left: -100%;
   min-height: 100%;
   z-index: $zindex-article;
-  transition: left 0.4s ease-out,width 0.4s ease-out;
-  
+  transition: left 0.4s ease-out, width 0.4s ease-out;
+
   @media (min-width: $screen-sm) {
     top: 208px;
   }
@@ -22,12 +22,12 @@
   height: 100vh;
   padding: 1em;
   @media (min-width: $screen-sm) {
-    height: calc( 100vh - 220px);
+    height: calc(100vh - 220px);
     width: 70%;
     margin: 0 auto;
     border-radius: 4px;
   }
-  &.block{
+  &.block {
     display: block;
   }
   header {
@@ -35,20 +35,20 @@
     @include flex-flow(row nowrap);
     @include justify-content(space-between);
     @include align-items(center);
-    margin: .5em 0 1em;
-    p{
+    margin: 0.5em 0 1em;
+    p {
       font-size: 1.5em;
       font-family: $fontGab;
     }
   }
-  main{
+  main {
     padding: 0 0 1em;
   }
 }
 
-.article-img-title{
+.article-img-title {
   width: 100%;
-  @media(min-width: $screen-sm){
+  @media (min-width: $screen-sm) {
     width: 150px;
     height: 130px;
     border-radius: 8px;
@@ -56,38 +56,49 @@
   }
 }
 
-.article-summary{
+.article-summary {
   color: $white;
   background: $kashmirblue;
-  padding: .5em;
+  padding: 0.5em;
   text-transform: uppercase;
   font-weight: $fontWeightBold;
 }
 
-.article-text{
+.article-text {
   margin: 1em 0;
 }
 
-.img-container{
+.img-container {
   width: 100%;
   @include flexbox();
   @include flex-flow(row wrap);
   // @media(min-width:$screen-sm){
   //   @include flex-flow(row nowrap);
   // }
-  div{
+  div {
     width: 50%;
-    height: 100px;    
-    padding: .1em;
-    @media(min-width:$screen-sm){
+    height: 100px;
+    padding: 0.1em;
+    position: relative;
+    overflow: hidden;
+    @media (min-width: $screen-sm) {
       width: 20%;
       height: 140px;
       // padding: 0 .5em;
     }
   }
-  img{
-    width: 100%;
-    height: 100%;
+  .thumbnail {
     cursor: pointer;
+    width: 150%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transition: 0.4s;
+    &:hover{
+      transform: translate(-50%, -50%) scale(1.1);
+    }
   }
 }

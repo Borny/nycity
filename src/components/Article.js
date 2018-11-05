@@ -381,6 +381,7 @@ class Article extends Component {
                         <img
                           src={image}
                           alt={image}
+                          className="thumbnail"
                           // opening the lightbox when an image is clicked
                           onClick={() => this.setState({ isOpen: true })}
                         />
