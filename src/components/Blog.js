@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Countdown from "./Countdown";
 import Cards from "./Cards";
 import Article from "./Article";
 
@@ -56,9 +55,11 @@ class Blog extends Component {
         };
       });
     } else if (e.target.id === "img4") {
-      this.setState(() => {
+      this.setState(prevState => {
         return {
-          articleFive: true
+          articleFive: true,
+          cardsHide: !prevState.cardsHide,
+          articleShow: !prevState.articleShow
         };
       });
     } else if (e.target.id === "img5") {
@@ -105,9 +106,9 @@ class Blog extends Component {
       <div className={blogClasses}>
         <header className="header">
           <h1>
-            {/* New York City
+            New York City
             <br />
-            October 2018 */}
+            October 2018
           </h1>
           <button
             className="btn btn-tertiary btn-comment"
@@ -121,8 +122,6 @@ class Blog extends Component {
             </svg>
           </button>
         </header>
-
-        <Countdown />
 
         <Article
           hideClick={this.closeArticleHandler}

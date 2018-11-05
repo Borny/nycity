@@ -11,23 +11,28 @@
   height: 100%;
   background: $white;
   transition: right .4s ease-out;
-  &.open{
+
+  &.open {
     right: 0;
+
     .header,
-    .footer{
+    .footer {
       right: 0;
     }
   }
-  @media(min-width:$screen-sm){
+
+  @media(min-width:$screen-sm) {
     box-shadow: 0px 0 4px 2px $blackOpacity5;
     width: 320px;
     right: -320px;
   }
-  @media(min-width:$screen-lg){
+
+  @media(min-width:$screen-lg) {
     width: 25%;
     right: -25%;
     min-width: 25%;
   }
+
   .header {
     @include flexbox();
     @include justify-content(space-between);
@@ -35,25 +40,28 @@
     position: fixed;
     top: 0;
     right: -100%;
-    background:$white;
+    background: $white;
     width: 100%;
     z-index: $zindex-comment-header;
     padding: .5em;
-    transition: right .4s ease-out;    
-    @media(min-width:$screen-sm){
+    transition: right .4s ease-out;
+
+    @media(min-width: $screen-sm) {
       width: 320px;
       right: -320px;
     }
-    @media(min-width:$screen-lg){
+
+    @media(min-width:$screen-lg) {
       width: 25%;
       right: -25%;
       min-width: 25%;
     }
+
     h2 {
       font-family: $fontPlaza;
       font-weight: $fontWeightBase;
       color: $kashmirblue;
-      
+
       font-size: 1.7em;
     }
   }
@@ -62,7 +70,7 @@
     position: fixed;
     bottom: 0;
     right: -100%;
-    background:$white;
+    background: $white;
     width: 100%;
     z-index: $zindex-comment-header;
     padding: 1em 0;
@@ -70,12 +78,14 @@
     display: flex;
     justify-content: center;
     margin-top: auto;
-    transition: right .4s ease-out;    
-    @media(min-width:$screen-sm){
+    transition: right .4s ease-out;
+
+    @media(min-width: $screen-sm) {
       width: 320px;
       right: -320px;
     }
-    @media(min-width:$screen-lg){
+
+    @media(min-width:$screen-lg) {
       width: 25%;
       right: -25%;
       min-width: 25%;
@@ -92,7 +102,8 @@
 
 .message-list {
   overflow-y: scroll;
-  ul{
+
+  ul {
     padding: 5em 1em;
   }
 }
@@ -102,22 +113,41 @@
   @include flex-flow(row nowrap);
   margin: 0 0 1em;
 
-  &.admin{
+  &.admin {
     @include flex-flow(row-reverse nowrap);
-    .message-data{
+
+    .message-data {
       padding: 0 .5em 0 50px;
     }
+
     .message-comment {
       border-radius: 0.5em 0 0.5em 0.5em;
       margin: 0 10px 0 0;
-      background: $kashmirblue;
       color: $white;
     }
+
     svg {
       left: initial;
       right: -9px;
       transform: rotateY(180deg);
-      fill: $kashmirblue;
+    }
+  }
+
+  &.admin-t {
+    .message-comment {
+      background: #1595d7;
+      svg {
+        fill: #1595d7;
+      }
+    }
+  }
+
+  &.admin-j {
+    .message-comment {
+      background: $kashmirblue;
+      svg {
+        fill: $kashmirblue;
+      }
     }
   }
 }
@@ -151,7 +181,7 @@
   margin: 0 0 0 10px;
   padding: 0.3em 1.5em .3em .6em;
   color: $tundora;
-  
+
   svg {
     position: absolute;
     top: 0;
