@@ -365,12 +365,13 @@ class Article extends Component {
                 </button>
               </header>
               <main>
-                <img
-                  className="article-img-title"
-                  src={this.state.articlesUrls[index]}
-                  alt="new york"
-                />
-
+                <div className="article-main-img">
+                  <img
+                    className="article-img-title"
+                    src={this.state.articlesUrls[index]}
+                    alt="new york"
+                  />
+                </div>
                 <p className="article-summary">{card.summary}</p>
                 <p className="article-text">{card.dayStory}</p>
                 <div className="img-container">
