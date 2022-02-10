@@ -27,7 +27,7 @@
   ],
   "devDependencies": {
     "firebase": "^5.5.3",
-    "node-sass": "^4.9.3",
+    "node-sass": "^7.0.0",
     "svgo": "^1.1.1"
   }
 }
